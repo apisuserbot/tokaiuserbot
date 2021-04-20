@@ -54,7 +54,7 @@ async def set_not_afk(event):
     ):
         shite = await event.client.send_message(
             event.chat_id,
-            "`Back alive! No Longer afk.\nWas afk for " + endtime + "`",
+            "`𝐁𝐨𝐬!!! 𝐓𝐢𝐝𝐚𝐤 𝐥𝐚𝐠𝐢 𝐚𝐟𝐤.\n𝐓𝐞𝐥𝐚𝐡 𝐚𝐟𝐤 𝐬𝐞𝐥𝐚𝐦𝐚 " + endtime + "`",
         )
         AFK_.USERAFK_ON = {}
         AFK_.afk_time = None
@@ -64,7 +64,7 @@ async def set_not_afk(event):
             await event.client.send_message(
                 BOTLOG_CHATID,
                 "#AFKFALSE \n`Set AFK mode to False\n"
-                + "Back alive! No Longer afk.\nWas afk for "
+                + "𝐁𝐨𝐬!!! 𝐓𝐢𝐝𝐚𝐤 𝐥𝐚𝐠𝐢 𝐚𝐟𝐤.\n𝐓𝐞𝐥𝐚𝐡 𝐚𝐟𝐤 𝐬𝐞𝐥𝐚𝐦𝐚 "
                 + endtime
                 + "`",
             )
@@ -108,23 +108,23 @@ async def on_afk(event):
         if AFK_.afk_type == "text":
             if AFK_.msg_link and AFK_.reason:
                 message_to_reply = (
-                    f"**I am AFK .\n\nAFK Since {endtime}\nReason : **{AFK_.reason}"
+                    f"**𝐀𝐤𝐮 𝐥𝐞𝐥𝐚𝐡 .\n\n𝐀𝐅𝐊 𝐬𝐞𝐣𝐚𝐤 {endtime}\n𝐀𝐥𝐚𝐬𝐚𝐧 : **{AFK_.reason}"
                 )
             elif AFK_.reason:
                 message_to_reply = (
-                    f"`I am AFK .\n\nAFK Since {endtime}\nReason : {AFK_.reason}`"
+                    f"`𝐀𝐤𝐮 𝐥𝐞𝐥𝐚𝐡 .\n\n𝐀𝐅𝐊 𝐬𝐞𝐣𝐚𝐤 {endtime}\n𝐀𝐥𝐚𝐬𝐚𝐧 : {AFK_.reason}`"
                 )
             else:
-                message_to_reply = f"`I am AFK .\n\nAFK Since {endtime}\nReason : Not Mentioned ( ಠ ʖ̯ ಠ)`"
+                message_to_reply = f"`𝐀𝐤𝐮 𝐥𝐞𝐥𝐚𝐡 .\n\n𝐀𝐅𝐊 𝐬𝐞𝐣𝐚𝐤 {endtime}\n𝐀𝐥𝐚𝐬𝐚𝐧 : Not Mentioned ( ಠ ʖ̯ ಠ)`"
             if event.chat_id not in Config.UB_BLACK_LIST_CHAT:
                 msg = await event.reply(message_to_reply)
         elif AFK_.afk_type == "media":
             if AFK_.reason:
                 message_to_reply = (
-                    f"`I am AFK .\n\nAFK Since {endtime}\nReason : {AFK_.reason}`"
+                    f"`𝐀𝐤𝐮 𝐥𝐞𝐥𝐚𝐡 .\n\n𝐀𝐅𝐊 𝐬𝐞𝐣𝐚𝐤 {endtime}\n𝐀𝐥𝐚𝐬𝐚𝐧 : {AFK_.reason}`"
                 )
             else:
-                message_to_reply = f"`I am AFK .\n\nAFK Since {endtime}\nReason : Not Mentioned ( ಠ ʖ̯ ಠ)`"
+                message_to_reply = f"`𝐀𝐤𝐮 𝐥𝐞𝐥𝐚𝐡 .\n\n𝐀𝐅𝐊 𝐬𝐞𝐣𝐚𝐤 {endtime}\n𝐀𝐥𝐚𝐬𝐚𝐧 : Not Mentioned ( ಠ ʖ̯ ಠ)`"
             if event.chat_id not in Config.UB_BLACK_LIST_CHAT:
                 msg = await event.reply(message_to_reply, file=AFK_.media_afk.media)
         if event.chat_id in AFK_.last_afk_message:
@@ -186,10 +186,10 @@ async def _(event):
         AFK_.USERAFK_ON = f"on: {AFK_.reason}"
         if AFK_.reason:
             await edit_delete(
-                event, f"`I shall be Going afk! because ~` {AFK_.reason}", 5
+                event, f"`𝐀𝐤𝐮 𝐡𝐚𝐫𝐮𝐬 𝐀𝐅𝐊!!! 𝐤𝐚𝐫𝐞𝐧𝐚 ~` {AFK_.reason}", 5
             )
         else:
-            await edit_delete(event, f"`I shall be Going afk! `", 5)
+            await edit_delete(event, f"`𝐀𝐤𝐮 𝐡𝐚𝐫𝐮𝐬 𝐀𝐅𝐊!!! `", 5)
         if BOTLOG:
             if AFK_.reason:
                 await event.client.send_message(
@@ -236,10 +236,10 @@ async def _(event):
         AFK_.USERAFK_ON = f"on: {AFK_.reason}"
         if AFK_.reason:
             await edit_delete(
-                event, f"`I shall be Going afk! because ~` {AFK_.reason}", 5
+                event, f"`𝐀𝐤𝐮 𝐡𝐚𝐫𝐮𝐬 𝐀𝐅𝐊 𝐤𝐚𝐫𝐞𝐧𝐚!!! ~` {AFK_.reason}", 5
             )
         else:
-            await edit_delete(event, f"`I shall be Going afk! `", 5)
+            await edit_delete(event, f"`𝐀𝐤𝐮 𝐡𝐚𝐫𝐮𝐬 𝐀𝐅𝐊!!! `", 5)
         AFK_.media_afk = await reply.forward_to(BOTLOG_CHATID)
         if AFK_.reason:
             await event.client.send_message(
