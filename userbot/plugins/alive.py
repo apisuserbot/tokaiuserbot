@@ -7,8 +7,8 @@ from . import ALIVE_NAME, StartTime, catversion, get_readable_time, mention, rep
 
 DEFAULTUSER = ALIVE_NAME or "cat"
 CAT_IMG = Config.ALIVE_PIC
-CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "✮ MY BOT IS RUNNING SUCCESSFULLY ✮"
-EMOJI = Config.CUSTOM_ALIVE_EMOJI or "  ✥ "
+CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "𝐀𝐬𝐢𝐬𝐭𝐞𝐧 𝐓𝐞𝐥𝐚𝐡 𝐎𝐧𝐥𝐢𝐧𝐞"
+EMOJI = Config.CUSTOM_ALIVE_EMOJI or "  ✎ "
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
@@ -21,12 +21,12 @@ async def amireallyalive(alive):
     _, check_sgnirts = check_data_base_heal_th()
     if CAT_IMG:
         cat_caption = f"**{CUSTOM_ALIVE_TEXT}**\n\n"
-        cat_caption += f"**{EMOJI} Database :** `{check_sgnirts}`\n"
-        cat_caption += f"**{EMOJI} Telethon version :** `{version.__version__}\n`"
-        cat_caption += f"**{EMOJI} Catuserbot Version :** `{catversion}`\n"
-        cat_caption += f"**{EMOJI} Python Version :** `{python_version()}\n`"
-        cat_caption += f"**{EMOJI} Uptime :** `{uptime}\n`"
-        cat_caption += f"**{EMOJI} Master:** {mention}\n"
+        cat_caption += f"**{EMOJI} 𝐃𝐚𝐭𝐚 :** `{check_sgnirts}`\n"
+        cat_caption += f"**{EMOJI} 𝐕𝐞𝐫𝐬𝐢 𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧 :** `{version.__version__}\n`"
+        cat_caption += f"**{EMOJI} 𝐕𝐞𝐫𝐬𝐢 𝐓𝐨𝐤𝐚𝐢-𝐔𝐛𝐨𝐭 :** `{catversion}`\n"
+        cat_caption += f"**{EMOJI} 𝐕𝐞𝐫𝐬𝐢 𝐏𝐲𝐭𝐡𝐨𝐧 :** `{python_version()}\n`"
+        cat_caption += f"**{EMOJI} 𝐔𝐩𝐭𝐢𝐦𝐞 :** `{uptime}\n`"
+        cat_caption += f"**{EMOJI} 𝐁𝐨𝐬:** {mention}\n"
         await alive.client.send_file(
             alive.chat_id, CAT_IMG, caption=cat_caption, reply_to=reply_to_id
         )
@@ -35,12 +35,12 @@ async def amireallyalive(alive):
         await edit_or_reply(
             alive,
             f"**{CUSTOM_ALIVE_TEXT}**\n\n"
-            f"**{EMOJI} Database :** `{check_sgnirts}`\n"
-            f"**{EMOJI} Telethon Version :** `{version.__version__}\n`"
-            f"**{EMOJI} Catuserbot Version :** `{catversion}`\n"
-            f"**{EMOJI} Python Version :** `{python_version()}\n`"
-            f"**{EMOJI} Uptime :** `{uptime}\n`"
-            f"**{EMOJI} Master:** {mention}\n",
+            f"**{EMOJI} 𝐃𝐚𝐭𝐚 :** `{check_sgnirts}`\n"
+            f"**{EMOJI} 𝐕𝐞𝐫𝐬𝐢 𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧 :** `{version.__version__}\n`"
+            f"**{EMOJI} 𝐕𝐞𝐫𝐬𝐢 𝐓𝐨𝐤𝐚𝐢-𝐔𝐛𝐨𝐭 :** `{catversion}`\n"
+            f"**{EMOJI} 𝐕𝐞𝐫𝐬𝐢 𝐏𝐲𝐭𝐡𝐨𝐧 :** `{python_version()}\n`"
+            f"**{EMOJI} 𝐔𝐩𝐭𝐢𝐦𝐞 :** `{uptime}\n`"
+            f"**{EMOJI} 𝐁𝐨𝐬:** {mention}\n",
         )
 
 
@@ -52,10 +52,10 @@ async def amireallyalive(alive):
     tgbotusername = Config.TG_BOT_USERNAME
     reply_to_id = await reply_id(alive)
     cat_caption = f"**Catuserbot is Up and Running**\n"
-    cat_caption += f"**  -Telethon version :** `{version.__version__}\n`"
-    cat_caption += f"**  -Catuserbot Version :** `{catversion}`\n"
-    cat_caption += f"**  -Python Version :** `{python_version()}\n`"
-    cat_caption += f"**  -Master:** {mention}\n"
+    cat_caption += f"**  𝐕𝐞𝐫𝐬𝐢 𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧 :** `{version.__version__}\n`"
+    cat_caption += f"**  𝐕𝐞𝐫𝐬𝐢 𝐓𝐨𝐤𝐚𝐢-𝐔𝐛𝐨𝐭 :** `{catversion}`\n"
+    cat_caption += f"**  𝐕𝐞𝐫𝐬𝐢 𝐏𝐲𝐭𝐡𝐨𝐧 :** `{python_version()}\n`"
+    cat_caption += f"**  𝐁𝐨𝐬:** {mention}\n"
     results = await bot.inline_query(tgbotusername, cat_caption)  # pylint:disable=E0602
     await results[0].click(alive.chat_id, reply_to=reply_to_id, hide_via=True)
     await alive.delete()
