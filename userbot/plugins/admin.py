@@ -392,22 +392,22 @@ async def endmute(event):
     if event.fwd_from:
         return
     if event.is_private:
-        await event.edit("`Unexpected issues or ugly errors may occur!`")
+        await event.edit("`𝐒𝐢𝐬𝐭𝐞𝐦 𝐞𝐫𝐫𝐨𝐫!!! 𝐌𝐚𝐢𝐧 𝐩𝐫𝐨𝐛𝐥𝐞𝐦 𝐭𝐚𝐤 𝐝𝐢𝐤𝐞𝐭𝐚𝐡𝐮𝐢...`")
         await sleep(1)
         userid = event.chat_id
         replied_user = await event.client(GetFullUserRequest(userid))
         chat_id = event.chat_id
         if not is_muted(userid, chat_id):
             return await event.edit(
-                "`__This user is not muted in this chat__\n（ ^_^）o自自o（^_^ ）`"
+                "`__𝐔𝐬𝐞𝐫 𝐢𝐧𝐢 𝐭𝐢𝐝𝐚𝐤 𝐝𝐢𝐦𝐮𝐭𝐞 𝐝𝐢𝐜𝐡𝐚𝐭 𝐢𝐧𝐢__\n（ ^_^）o自自o（^_^ ）`"
             )
         try:
             unmute(userid, chat_id)
         except Exception as e:
-            await event.edit(f"**Error **\n`{str(e)}`")
+            await event.edit(f"**𝐆𝐚𝐠𝐚𝐥 **\n`{str(e)}`")
         else:
             await event.edit(
-                "`Successfully unmuted that person\n乁( ◔ ౪◔)「    ┑(￣Д ￣)┍`"
+                "`𝐔𝐬𝐞𝐫 𝐭𝐞𝐥𝐚𝐡 𝐝𝐢𝐦𝐮𝐭𝐞!!!\n乁( ◔ ౪◔)「    ┑(￣Д ￣)┍`"
             )
         if BOTLOG:
             await event.client.send_message(
@@ -437,13 +437,13 @@ async def endmute(event):
                 except Exception:
                     return await edit_or_reply(
                         event,
-                        "`This user can already speak freely in this chat ~~lmfao sed rip~~`",
+                        "`𝐔𝐬𝐞𝐫 𝐢𝐧𝐢 𝐭𝐢𝐝𝐚𝐤 𝐝𝐢𝐛𝐢𝐬𝐮𝐤𝐚𝐧 𝐥𝐚𝐠𝐢, 𝐬𝐞𝐥𝐚𝐦𝐚𝐭 𝐛𝐞𝐫𝐛𝐢𝐜𝐚𝐫𝐚...`",
                     )
         except Exception as e:
-            return await edit_or_reply(event, f"**Error : **`{str(e)}`")
+            return await edit_or_reply(event, f"**𝐆𝐚𝐠𝐚𝐥 : **`{str(e)}`")
         await edit_or_reply(
             event,
-            f"{_format.mentionuser(user.first_name ,user.id)} `is unmuted in {event.chat.title}\n乁( ◔ ౪◔)「    ┑(￣Д ￣)┍`",
+            f"{_format.mentionuser(user.first_name ,user.id)} `𝐭𝐞𝐥𝐚𝐡 𝐝𝐢𝐮𝐧𝐦𝐮𝐭𝐞 𝐝𝐢 {event.chat.title}\n乁( ◔ ౪◔)「    ┑(￣Д ￣)┍`",
         )
         if BOTLOG:
             await event.client.send_message(
@@ -461,7 +461,7 @@ async def kick(usr):
     if usr.fwd_from:
         return
     if not usr.is_group:
-        await edit_or_reply(usr, "`I don't think this is a group.`")
+        await edit_or_reply(usr, "`𝐌𝐚𝐚𝐟 𝐛𝐨𝐬, 𝐢𝐧𝐢 𝐛𝐮𝐤𝐚𝐧 𝐠𝐫𝐮𝐩!!!`")
         return
     chat = await usr.get_chat()
     admin = chat.admin_rights
@@ -472,7 +472,7 @@ async def kick(usr):
     user, reason = await get_user_from_event(usr)
     if not user:
         return
-    catevent = await edit_or_reply(usr, "`Kicking...`")
+    catevent = await edit_or_reply(usr, "`𝐌𝐞𝐧𝐞𝐧𝐝𝐚𝐧𝐠...`")
     try:
         await usr.client.kick_participant(usr.chat_id, user.id)
         await sleep(0.5)
@@ -481,10 +481,10 @@ async def kick(usr):
         return
     if reason:
         await catevent.edit(
-            f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`\nReason: {reason}"
+            f"`𝐃𝐢𝐭𝐞𝐧𝐝𝐚𝐧𝐠` [{user.first_name}](tg://user?id={user.id})`!`\n𝐊𝐚𝐫𝐞𝐧𝐚: {reason}"
         )
     else:
-        await catevent.edit(f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`")
+        await catevent.edit(f"`𝐃𝐢𝐭𝐞𝐧𝐝𝐚𝐧𝐠!!!` [{user.first_name}](tg://user?id={user.id})`!`")
     if BOTLOG:
         await usr.client.send_message(
             BOTLOG_CHATID,
