@@ -135,12 +135,12 @@ async def info(event):
             await event.delete()
             await reply.delete()
     else:
-        string = "<b>Please specify which plugin do you want help for !!\
-            \nNumber of plugins : </b><code>{count}</code>\
-            \n<b>Usage:</b> <code>.help plugin name</code>\n\n"
+        string = "<b>𝐁𝐞𝐫𝐢 𝐬𝐩𝐞𝐬𝐢𝐟𝐢𝐤𝐚𝐬𝐢 𝐩𝐥𝐮𝐠𝐢𝐧 𝐦𝐚𝐧𝐚 𝐲𝐚𝐧𝐠 𝐢𝐧𝐠𝐢𝐧 𝐤𝐚𝐦𝐮 𝐡𝐞𝐥𝐩 !!\
+            \n𝐉𝐮𝐦𝐥𝐚𝐡 𝐩𝐥𝐮𝐠𝐢𝐧 : </b><code>{count}</code>\
+            \n<b>𝐅𝐮𝐧𝐠𝐬𝐢:</b> <code>.help 𝐧𝐚𝐦𝐚 𝐩𝐥𝐮𝐠𝐢𝐧</code>\n\n"
         catcount = 0
         for i in sorted(SUDO_LIST):
-            string += "◆ " + f"<code>{str(i)}</code>"
+            string += "◆◆ " + f"<code>{str(i)}</code>"
             string += " "
             catcount += 1
         await event.reply(string.format(count=catcount), parse_mode="HTML")
@@ -160,9 +160,9 @@ async def info(event):
             await asyncio.sleep(3)
             await event.delete()
     else:
-        string = "<b>Please specify which plugin do you want help for !!\
-            \nNumber of plugins : </b><code>{count}</code>\
-            \n<b>Usage : </b><code>.info plugin name</code>\n\n"
+        string = "<b>𝐁𝐞𝐫𝐢 𝐬𝐩𝐞𝐬𝐢𝐟𝐢𝐤𝐚𝐬𝐢 𝐩𝐥𝐮𝐠𝐢𝐧 𝐦𝐚𝐧𝐚 𝐲𝐚𝐧𝐠 𝐢𝐧𝐠𝐢𝐧 𝐤𝐚𝐦𝐮 𝐡𝐞𝐥𝐩 !!\
+            \n𝐉𝐮𝐦𝐥𝐚𝐡 𝐩𝐥𝐮𝐠𝐢𝐧 : </b><code>{count}</code>\
+            \n<b>𝐅𝐮𝐧𝐠𝐬𝐢 : </b><code>.info 𝐧𝐚𝐦𝐚 𝐩𝐥𝐮𝐠𝐢𝐧</code>\n\n"
         catcount = 0
         for i in sorted(CMD_HELP):
             string += "◆ " + f"<code>{str(i)}</code>"
