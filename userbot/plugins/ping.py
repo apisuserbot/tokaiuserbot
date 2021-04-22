@@ -22,7 +22,7 @@ async def _(event):
     start = datetime.now()
     animation_interval = 0.2
     animation_ttl = range(26)
-    event = await edit_or_reply(event, "ping....")
+    event = await edit_or_reply(event, "𝐏𝐢𝐧𝐠𝐢𝐧𝐠....")
     animation_chars = [
         "⬛⬛⬛⬛⬛⬛⬛⬛⬛",
         "⬛⬛⬛⬛⬛⬛⬛⬛⬛ \n⬛‎📶‎📶‎📶‎📶‎📶‎📶‎📶⬛",
