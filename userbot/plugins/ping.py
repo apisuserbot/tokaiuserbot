@@ -17,7 +17,7 @@ async def _(event):
     event = await edit_or_reply(event, "🏓𝐏𝐨𝐧𝐠!!")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
-    await event.edit(f"**⚡𝗙𝗥𝗢𝗠-𝗩𝗧 𝗣𝗜𝗡𝗚⚡**\n"
+    await event.edit(f"**🚀𝐓𝐎𝐊𝐀𝐈-𝐑𝐎𝐁𝐎🚀**\n"
                      f"╭┈──────────── \n"
                      f" **▹ ᴘᴏɴɢ    :** "
                      f"`{}𝐦𝐬` \n"
