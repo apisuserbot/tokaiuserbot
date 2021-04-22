@@ -48,16 +48,16 @@ UNBAN_RIGHTS = ChatBannedRights(
 async def catgban(event):
     if event.fwd_from:
         return
-    cate = await edit_or_reply(event, "`gbanning.......`")
+    cate = await edit_or_reply(event, "`𝐆𝐛𝐚𝐧𝐧𝐢𝐧𝐠......`")
     start = datetime.now()
     user, reason = await get_user_from_event(event, cate)
     if not user:
         return
     if user.id == (await event.client.get_me()).id:
-        await cate.edit("why would I ban myself")
+        await cate.edit("𝐊𝐞𝐧𝐚𝐩𝐚 𝐡𝐚𝐫𝐮𝐬 𝐛𝐚𝐧𝐧𝐞𝐝 𝐝𝐢𝐫𝐢 𝐬𝐞𝐧𝐝𝐢𝐫𝐢!!!")
         return
     if user.id in CAT_ID:
-        await cate.edit("why would I ban my dev")
+        await cate.edit("𝐊𝐞𝐧𝐚𝐩𝐚 𝐡𝐚𝐫𝐮𝐬 𝐛𝐚𝐧𝐧𝐞𝐝 𝐝𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫 𝐬𝐞𝐧𝐝𝐢𝐫𝐢!!!")
         return
     try:
         hmm = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -66,7 +66,7 @@ async def catgban(event):
         pass
     if gban_sql.is_gbanned(user.id):
         await cate.edit(
-            f"`the `[user](tg://user?id={user.id})` is already in gbanned list any way checking again`"
+            f"`𝐒𝐢 `[user](tg://user?id={user.id})` 𝐬𝐮𝐝𝐚𝐡 𝐚𝐝𝐚 𝐝𝐚𝐥𝐚𝐦 𝐥𝐢𝐬𝐭 𝐠𝐛𝐚𝐧𝐧𝐞𝐝 𝐤𝐮, 𝐬𝐢𝐥𝐚𝐡𝐤𝐚𝐧 𝐜𝐞𝐤 𝐥𝐚𝐠𝐢`"
         )
     else:
         gban_sql.catgban(user.id, reason)
@@ -75,10 +75,10 @@ async def catgban(event):
     count = 0
     sandy = len(san)
     if sandy == 0:
-        await cate.edit("`you are not admin of atleast one group` ")
+        await cate.edit("`𝐁𝐨𝐬 𝐛𝐮𝐤𝐚𝐧 𝐚𝐝𝐦𝐢𝐧, 𝐬𝐞𝐭𝐢𝐝𝐚𝐤𝐧𝐲𝐚 𝐝𝐚𝐥𝐚𝐦 𝐬𝐚𝐭𝐮 𝐠𝐫𝐮𝐩` ")
         return
     await cate.edit(
-        f"`initiating gban of the `[user](tg://user?id={user.id}) `in {len(san)} groups`"
+        f"`𝐒𝐞𝐝𝐚𝐧𝐠 𝐦𝐞𝐥𝐚𝐤𝐮𝐤𝐚𝐧 𝐠𝐛𝐚𝐧 𝐤𝐞𝐩𝐚𝐝𝐚 `[user](tg://user?id={user.id}) `𝐝𝐢 {len(san)} 𝐠𝐫𝐮𝐩`"
     )
     for i in range(sandy):
         try:
@@ -94,11 +94,11 @@ async def catgban(event):
     cattaken = (end - start).seconds
     if reason:
         await cate.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) `was gbanned in {count} groups in {cattaken} seconds`!!\n**Reason :** `{reason}`"
+            f"[{user.first_name}](tg://user?id={user.id}) `𝐭𝐞𝐥𝐚𝐡 𝐭𝐞𝐫-𝐠𝐛𝐚𝐧𝐧𝐞𝐝 𝐝𝐢 {count} 𝐠𝐫𝐮𝐩 𝐝𝐚𝐥𝐚𝐦 {cattaken} 𝐝𝐞𝐭𝐢𝐤`!!\n**𝐀𝐥𝐚𝐬𝐚𝐧 :** `{reason}`"
         )
     else:
         await cate.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) `was gbanned in {count} groups in {cattaken} seconds`!!"
+            f"[{user.first_name}](tg://user?id={user.id}) `𝐭𝐞𝐥𝐚𝐡 𝐭𝐞𝐫-𝐠𝐛𝐚𝐧𝐧𝐞𝐝 𝐝𝐢 {count} 𝐠𝐫𝐮𝐩 𝐝𝐚𝐥𝐚𝐦 {cattaken} 𝐝𝐞𝐭𝐢𝐤`!!"
         )
 
     if BOTLOG and count != 0:
@@ -137,7 +137,7 @@ async def catgban(event):
 async def catgban(event):
     if event.fwd_from:
         return
-    cate = await edit_or_reply(event, "`ungbanning.....`")
+    cate = await edit_or_reply(event, "`𝐔𝐧𝐠𝐛𝐚𝐧𝐧𝐢𝐧𝐠.....`")
     start = datetime.now()
     user, reason = await get_user_from_event(event, cate)
     if not user:
@@ -146,7 +146,7 @@ async def catgban(event):
         gban_sql.catungban(user.id)
     else:
         await cate.edit(
-            f"the [user](tg://user?id={user.id}) `is not in your gbanned list`"
+            f"𝐒𝐢 [user](tg://user?id={user.id}) `𝐭𝐢𝐝𝐚𝐤 𝐚𝐝𝐚 𝐝𝐚𝐥𝐚𝐦 𝐥𝐢𝐬𝐭 𝐠𝐛𝐚𝐧𝐧𝐞𝐝 𝐬𝐚𝐲𝐚`"
         )
         return
     san = []
@@ -154,10 +154,10 @@ async def catgban(event):
     count = 0
     sandy = len(san)
     if sandy == 0:
-        await cate.edit("`you are not even admin of atleast one group `")
+        await cate.edit("`𝐁𝐨𝐬 𝐛𝐮𝐤𝐚𝐧 𝐚𝐝𝐦𝐢𝐧, 𝐬𝐞𝐭𝐢𝐝𝐚𝐤𝐧𝐲𝐚 𝐝𝐚𝐥𝐚𝐦 𝐬𝐚𝐭𝐮 𝐠𝐫𝐮𝐩 `")
         return
     await cate.edit(
-        f"initiating ungban of the [user](tg://user?id={user.id}) in `{len(san)}` groups"
+        f"𝐒𝐞𝐝𝐚𝐧𝐠 𝐦𝐞𝐥𝐚𝐤𝐮𝐤𝐚𝐧 𝐮𝐧𝐠𝐛𝐚𝐧 𝐤𝐞𝐩𝐚𝐝𝐚 [user](tg://user?id={user.id}) 𝐝𝐢 `{len(san)}` 𝐠𝐫𝐮𝐩"
     )
     for i in range(sandy):
         try:
@@ -173,11 +173,11 @@ async def catgban(event):
     cattaken = (end - start).seconds
     if reason:
         await cate.edit(
-            f"[{user.first_name}](tg://user?id={user.id}`) was ungbanned in {count} groups in {cattaken} seconds`!!\n**Reason :** `{reason}`"
+            f"[{user.first_name}](tg://user?id={user.id}`) 𝐭𝐞𝐥𝐚𝐡 𝐭𝐞𝐫-𝐮𝐧𝐠𝐛𝐚𝐧𝐧𝐞𝐝 𝐝𝐢 {count} 𝐠𝐫𝐮𝐩 𝐝𝐚𝐥𝐚𝐦 {cattaken} 𝐝𝐞𝐭𝐢𝐤`!!\n**𝐀𝐥𝐚𝐬𝐚𝐧 :** `{reason}`"
         )
     else:
         await cate.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) `was ungbanned in {count} groups in {cattaken} seconds`!!"
+            f"[{user.first_name}](tg://user?id={user.id}) `𝐭𝐞𝐥𝐚𝐡 𝐭𝐞𝐫-𝐮𝐧𝐠𝐛𝐚𝐧𝐧𝐞𝐝 𝐝𝐢 {count} 𝐠𝐫𝐮𝐩 𝐝𝐚𝐥𝐚𝐦 {cattaken} 𝐝𝐞𝐭𝐢𝐤`!!"
         )
 
     if BOTLOG and count != 0:
@@ -210,14 +210,14 @@ async def gablist(event):
     if event.fwd_from:
         return
     gbanned_users = gban_sql.get_all_gbanned()
-    GBANNED_LIST = "Current Gbanned Users\n"
+    GBANNED_LIST = "𝐋𝐢𝐬𝐭 𝐠𝐛𝐚𝐧𝐧𝐞𝐝 𝐮𝐬𝐞𝐫\n"
     if len(gbanned_users) > 0:
         for a_user in gbanned_users:
             if a_user.reason:
-                GBANNED_LIST += f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id}) for {a_user.reason}\n"
+                GBANNED_LIST += f"➠ [{a_user.chat_id}](tg://user?id={a_user.chat_id}) for {a_user.reason}\n"
             else:
                 GBANNED_LIST += (
-                    f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id}) Reason None\n"
+                    f"➠ [{a_user.chat_id}](tg://user?id={a_user.chat_id}) 𝐓𝐚𝐧𝐩𝐚 𝐚𝐥𝐚𝐬𝐚𝐧\n"
                 )
     else:
         GBANNED_LIST = "no Gbanned Users (yet)"
@@ -230,7 +230,7 @@ async def startgmute(event):
     if event.fwd_from:
         return
     if event.is_private:
-        await event.edit("`Unexpected issues or ugly errors may occur!`")
+        await event.edit("`𝐊𝐞𝐬𝐚𝐥𝐚𝐡𝐚𝐧 𝐬𝐢𝐬𝐭𝐞𝐦 𝐭𝐢𝐝𝐚𝐤 𝐝𝐢𝐤𝐞𝐭𝐚𝐡𝐮𝐢!`")
         await asyncio.sleep(2)
         userid = event.chat_id
         reason = event.pattern_match.group(1)
@@ -239,16 +239,16 @@ async def startgmute(event):
         if not user:
             return
         if user.id == bot.uid:
-            return await edit_or_reply(event, "`Sorry, I can't gmute myself`")
+            return await edit_or_reply(event, "`𝐓𝐢𝐝𝐚𝐤 𝐛𝐢𝐬𝐚 𝐦𝐞𝐥𝐚𝐤𝐮𝐤𝐚𝐧 𝐠𝐦𝐮𝐭𝐞 𝐩𝐚𝐝𝐚 𝐝𝐢𝐫𝐢 𝐬𝐞𝐧𝐝𝐢𝐫𝐢`")
         userid = user.id
     try:
         user = (await event.client(GetFullUserRequest(userid))).user
     except Exception:
-        return await edit_or_reply(event, "`Sorry. I am unable to fetch the user`")
+        return await edit_or_reply(event, "`𝐌𝐚𝐚𝐟, 𝐚𝐤𝐮 𝐭𝐢𝐝𝐚𝐤 𝐛𝐢𝐬𝐚 𝐦𝐞𝐧𝐲𝐞𝐧𝐭𝐮𝐡 𝐮𝐬𝐞𝐫 𝐭𝐞𝐫𝐬𝐞𝐛𝐮𝐭`")
     if is_muted(userid, "gmute"):
         return await edit_or_reply(
             event,
-            f"{_format.mentionuser(user.first_name ,user.id)} ` is already gmuted`",
+            f"{_format.mentionuser(user.first_name ,user.id)} ` 𝐓𝐞𝐥𝐚𝐡 𝐭𝐞𝐫-𝐠𝐦𝐮𝐭𝐞`",
         )
     try:
         mute(userid, "gmute")
@@ -258,12 +258,12 @@ async def startgmute(event):
         if reason:
             await edit_or_reply(
                 event,
-                f"{_format.mentionuser(user.first_name ,user.id)} `is Successfully gmuted`\n**Reason :** `{reason}`",
+                f"{_format.mentionuser(user.first_name ,user.id)} `𝐒𝐮𝐤𝐬𝐞𝐬 𝐭𝐞𝐫-𝐠𝐦𝐮𝐭𝐞`\n**𝐀𝐥𝐚𝐬𝐚𝐧 :** `{reason}`",
             )
         else:
             await edit_or_reply(
                 event,
-                f"{_format.mentionuser(user.first_name ,user.id)} `is Successfully gmuted`",
+                f"{_format.mentionuser(user.first_name ,user.id)} `𝐒𝐮𝐤𝐬𝐞𝐬 𝐭𝐞𝐫-𝐠𝐦𝐮𝐭𝐞`",
             )
     if BOTLOG:
         reply = await event.get_reply_message()
@@ -290,7 +290,7 @@ async def endgmute(event):
     if event.fwd_from:
         return
     if event.is_private:
-        await event.edit("`Unexpected issues or ugly errors may occur!`")
+        await event.edit("`𝐊𝐞𝐬𝐚𝐥𝐚𝐡𝐚𝐧 𝐬𝐢𝐬𝐭𝐞𝐦 𝐭𝐢𝐝𝐚𝐤 𝐝𝐢𝐤𝐞𝐭𝐚𝐡𝐮𝐢!`")
         await asyncio.sleep(2)
         userid = event.chat_id
         reason = event.pattern_match.group(1)
@@ -299,16 +299,16 @@ async def endgmute(event):
         if not user:
             return
         if user.id == bot.uid:
-            return await edit_or_reply(event, "`Sorry, I can't gmute myself`")
+            return await edit_or_reply(event, "`𝐓𝐢𝐝𝐚𝐤 𝐛𝐢𝐬𝐚 𝐦𝐞𝐥𝐚𝐤𝐮𝐤𝐚𝐧 𝐠𝐦𝐮𝐭𝐞 𝐩𝐚𝐝𝐚 𝐝𝐢𝐫𝐢 𝐬𝐞𝐧𝐝𝐢𝐫𝐢`")
         userid = user.id
     try:
         user = (await event.client(GetFullUserRequest(userid))).user
     except Exception:
-        return await edit_or_reply(event, "`Sorry. I am unable to fetch the user`")
+        return await edit_or_reply(event, "`𝐌𝐚𝐚𝐟, 𝐚𝐤𝐮 𝐭𝐢𝐝𝐚𝐤 𝐛𝐢𝐬𝐚 𝐦𝐞𝐧𝐲𝐞𝐧𝐭𝐮𝐡 𝐮𝐬𝐞𝐫 𝐭𝐞𝐫𝐬𝐞𝐛𝐮𝐭`")
 
     if not is_muted(userid, "gmute"):
         return await edit_or_reply(
-            event, f"{_format.mentionuser(user.first_name ,user.id)} `is not gmuted`"
+            event, f"{_format.mentionuser(user.first_name ,user.id)} `𝐓𝐢𝐝𝐚𝐤 𝐭𝐞𝐫-𝐠𝐦𝐮𝐭𝐞`"
         )
     try:
         unmute(userid, "gmute")
@@ -318,12 +318,12 @@ async def endgmute(event):
         if reason:
             await edit_or_reply(
                 event,
-                f"{_format.mentionuser(user.first_name ,user.id)} `is Successfully ungmuted`\n**Reason :** `{reason}`",
+                f"{_format.mentionuser(user.first_name ,user.id)} `𝐒𝐮𝐤𝐬𝐞𝐬 𝐭𝐞𝐫-𝐮𝐧𝐠𝐦𝐮𝐭𝐞𝐝`\n**𝐀𝐥𝐚𝐬𝐚𝐧 :** `{reason}`",
             )
         else:
             await edit_or_reply(
                 event,
-                f"{_format.mentionuser(user.first_name ,user.id)} `is Successfully ungmuted`",
+                f"{_format.mentionuser(user.first_name ,user.id)} `𝐒𝐮𝐤𝐬𝐞𝐬 𝐭𝐞𝐫-𝐮𝐧𝐠𝐦𝐮𝐭𝐞𝐝`",
             )
     if BOTLOG:
         if reason:
