@@ -1,6 +1,11 @@
+import time
 import asyncio
+
 from datetime import datetime
 
+from . import ALIVE_NAME, StartTime, get_readable_time
+
+DEFAULTUSER = ALIVE_NAME
 
 @bot.on(admin_cmd(pattern="ping$"))
 @bot.on(sudo_cmd(pattern="ping$", allow_sudo=True))
@@ -8,10 +13,23 @@ async def _(event):
     if event.fwd_from:
         return
     start = datetime.now()
-    event = await edit_or_reply(event, "Pong!")
+    uptime = await get_readable_time((time.time() - StartTime))
+    event = await edit_or_reply(event, "🏓𝐏𝐨𝐧𝐠!!")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
-    await event.edit("🏓𝐏𝐨𝐧𝐠!!\n`{} 𝐦𝐬`".format(ms))
+    await event.edit(f"**⚡𝗙𝗥𝗢𝗠-𝗩𝗧 𝗣𝗜𝗡𝗚⚡**\n"
+                     f"╭┈──────────── \n"
+                     f" **▹ ᴘᴏɴɢ    :** "
+                     f"`{}𝐦𝐬` \n"
+                     f" **▹ ᴏɴʟɪɴᴇ  :** "
+                     f"`{uptime}` \n"
+                     f" **▹ ᴏᴡɴᴇʀ  :** `{ALIVE_NAME}`\n"
+                     f"╰┈─────────" .format(ms)
+
+
+
+
+
 
 
 @bot.on(admin_cmd(pattern=f"fping$", outgoing=True))
