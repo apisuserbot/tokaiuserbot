@@ -20,7 +20,7 @@ async def amireallyalive(alive):
     uptime = await get_readable_time((time.time() - StartTime))
     _, check_sgnirts = check_data_base_heal_th()
     if CAT_IMG:
-        cat_caption = f"**---------------{CUSTOM_ALIVE_TEXT}---------------**\n"
+        cat_caption = f"**•°•°•°•°•°•{CUSTOM_ALIVE_TEXT}•°•°•°•°•°•**\n"
         car_caption += f"**╭━━━━━━━━━━━━━━━━━━━━━━╮**\n"
         cat_caption += f"**{EMOJI} 𝐃𝐚𝐭𝐚 :** `{check_sgnirts}`\n"
         cat_caption += f"**{EMOJI} 𝐕𝐞𝐫𝐬𝐢 𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧 :** `{version.__version__}\n`"
@@ -36,7 +36,7 @@ async def amireallyalive(alive):
     else:
         await edit_or_reply(
             alive,
-            f"**---------------{CUSTOM_ALIVE_TEXT}---------------**\n"
+            f"**•°•°•°•°•°•{CUSTOM_ALIVE_TEXT}•°•°•°•°•°•**\n"
             f"**╭━━━━━━━━━━━━━━━━━━━━━━╮**\n"
             f"**{EMOJI} 𝐃𝐚𝐭𝐚 :** `{check_sgnirts}`\n"
             f"**{EMOJI} 𝐕𝐞𝐫𝐬𝐢 𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧 :** `{version.__version__}\n`"
