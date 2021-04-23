@@ -309,7 +309,7 @@ async def startmute(event):
         except Exception as e:
             await event.edit(f"**𝐆𝐚𝐠𝐚𝐥 **\n`{str(e)}`")
         else:
-            await event.edit("`𝐔𝐬𝐞𝐫 𝐭𝐞𝐥𝐚𝐡 𝐝𝐢𝐦𝐮𝐭𝐞.\n**｀-´)⊃━☆ﾟ.*･｡ﾟ **`")
+            await event.edit("`𝐔𝐬𝐞𝐫 𝐭𝐞𝐥𝐚𝐡 𝐝𝐢𝐦𝐮𝐭𝐞!!!\n`")
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID,
@@ -369,13 +369,13 @@ async def startmute(event):
         if reason:
             await edit_or_reply(
                 event,
-                f"{_format.mentionuser(user.first_name ,user.id)} `𝐔𝐬𝐞𝐫 𝐭𝐞𝐥𝐚𝐡 𝐝𝐢𝐦𝐮𝐭𝐞 𝐝𝐢 {event.chat.title}`\n"
+                f"{_format.mentionuser(user.first_name ,user.id)} `𝐭𝐞𝐥𝐚𝐡 𝐝𝐢𝐦𝐮𝐭𝐞 𝐝𝐢 {event.chat.title}`\n"
                 f"`𝐊𝐚𝐫𝐞𝐧𝐚:`{reason}",
             )
         else:
             await edit_or_reply(
                 event,
-                f"{_format.mentionuser(user.first_name ,user.id)} `𝐔𝐬𝐞𝐫 𝐭𝐞𝐥𝐚𝐡 𝐝𝐢𝐦𝐮𝐭𝐞 𝐝𝐢 {event.chat.title}`\n",
+                f"{_format.mentionuser(user.first_name ,user.id)} `𝐭𝐞𝐥𝐚𝐡 𝐝𝐢𝐦𝐮𝐭𝐞 𝐝𝐢 {event.chat.title}`\n",
             )
         if BOTLOG:
             await event.client.send_message(
@@ -399,7 +399,7 @@ async def endmute(event):
         chat_id = event.chat_id
         if not is_muted(userid, chat_id):
             return await event.edit(
-                "`__𝐔𝐬𝐞𝐫 𝐢𝐧𝐢 𝐭𝐢𝐝𝐚𝐤 𝐝𝐢𝐦𝐮𝐭𝐞 𝐝𝐢𝐜𝐡𝐚𝐭 𝐢𝐧𝐢__\n（ ^_^）o自自o（^_^ ）`"
+                "`__𝐔𝐬𝐞𝐫 𝐢𝐧𝐢 𝐭𝐢𝐝𝐚𝐤 𝐝𝐢𝐦𝐮𝐭𝐞 𝐝𝐢𝐜𝐡𝐚𝐭 𝐢𝐧𝐢__\n`"
             )
         try:
             unmute(userid, chat_id)
@@ -407,7 +407,7 @@ async def endmute(event):
             await event.edit(f"**𝐆𝐚𝐠𝐚𝐥 **\n`{str(e)}`")
         else:
             await event.edit(
-                "`𝐔𝐬𝐞𝐫 𝐭𝐞𝐥𝐚𝐡 𝐝𝐢𝐦𝐮𝐭𝐞!!!\n乁( ◔ ౪◔)「    ┑(￣Д ￣)┍`"
+                "`𝐔𝐬𝐞𝐫 𝐭𝐞𝐥𝐚𝐡 𝐝𝐢𝐦𝐮𝐭𝐞!!!\n`"
             )
         if BOTLOG:
             await event.client.send_message(
@@ -443,7 +443,7 @@ async def endmute(event):
             return await edit_or_reply(event, f"**𝐆𝐚𝐠𝐚𝐥 : **`{str(e)}`")
         await edit_or_reply(
             event,
-            f"{_format.mentionuser(user.first_name ,user.id)} `𝐭𝐞𝐥𝐚𝐡 𝐝𝐢𝐮𝐧𝐦𝐮𝐭𝐞 𝐝𝐢 {event.chat.title}\n乁( ◔ ౪◔)「    ┑(￣Д ￣)┍`",
+            f"{_format.mentionuser(user.first_name ,user.id)} `𝐭𝐞𝐥𝐚𝐡 𝐝𝐢𝐮𝐧𝐦𝐮𝐭𝐞 𝐝𝐢 {event.chat.title}\n`",
         )
         if BOTLOG:
             await event.client.send_message(
