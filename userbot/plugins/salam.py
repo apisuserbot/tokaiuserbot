@@ -1,5 +1,5 @@
 from platform import uname
-from userbot import ALIVE_NAME, CMD_HELP
+from . import ALIVE_NAME, CMD_HELP
 from userbot.events import register
 
 # ================= CONSTANT =================
