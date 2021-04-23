@@ -251,8 +251,8 @@ async def wish_check(event):
 async def source(e):
     await edit_or_reply(
         e,
-        "➠ 𝐌𝐨𝐝𝐢𝐟𝐢𝐞𝐫 : [•𝐓𝐎𝐊𝐀𝐈•](https://t.me/Insaynn)\
-        \n➠ 𝐁𝐚𝐬𝐞𝐝 𝐎𝐧 : [•𝐋𝐎𝐕𝐄𝐋𝐘 𝐂𝐀𝐓•](https://github.com/sandy1709/catuserbot)",
+        "➠ 𝐑𝐞𝐩𝐨 𝐎𝐰𝐧𝐞𝐫 : [𝐓𝐨𝐤𝐚𝐢](https://t.me/Insaynn)\
+        \n➠ 𝐈𝐧𝐬𝐩𝐢𝐫𝐞𝐝 𝐁𝐲 : [𝐂𝐚𝐭-𝐔𝐬𝐞𝐫𝐛𝐨𝐭](https://github.com/sandy1709/catuserbot)",
     )
 
 
