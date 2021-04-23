@@ -26,7 +26,7 @@ async def gcast(event):
                 await bot.send_message(chat, msg)
             except BaseException:
                 er += 1
-    await kk.edit(f"**𝐆𝐜𝐚𝐬𝐭𝐢𝐧𝐠 𝐬𝐮𝐤𝐬𝐞𝐬 𝐝𝐢𝐥𝐮𝐧𝐜𝐮𝐫𝐤𝐚𝐧 𝐤𝐞** `{done}` **𝐠𝐫𝐮𝐩,𝐆𝐚𝐠𝐚𝐥 𝐦𝐞𝐧𝐠𝐢𝐫𝐢𝐦 𝐩𝐞𝐬𝐚𝐧 𝐤𝐞** `{er}` **𝐠𝐫𝐮𝐩**")
+    await kk.edit(f"**𝐆𝐜𝐚𝐬𝐭𝐢𝐧𝐠 𝐬𝐮𝐤𝐬𝐞𝐬 𝐝𝐢𝐥𝐮𝐧𝐜𝐮𝐫𝐤𝐚𝐧 𝐤𝐞** `{done}` **𝐠𝐫𝐮𝐩, 𝐆𝐚𝐠𝐚𝐥 𝐦𝐞𝐧𝐠𝐢𝐫𝐢𝐦 𝐩𝐞𝐬𝐚𝐧 𝐤𝐞** `{er}` **𝐠𝐫𝐮𝐩**")
 
 # Alvin Ganteng
 CMD_HELP.update(
