@@ -20,15 +20,15 @@ async def amireallyalive(alive):
     uptime = await get_readable_time((time.time() - StartTime))
     _, check_sgnirts = check_data_base_heal_th()
     if CAT_IMG:
-        cat_caption = f"**━━━━━━━━ {CUSTOM_ALIVE_TEXT} ━━━━━━━━**\n"
-        car_caption += f"**╭━━━━━━━━━━━━━━━━━━━━━━╮**\n"
+        cat_caption = f"**••━━━━━━ ✘ {CUSTOM_ALIVE_TEXT} ✘ ━━━━━━••**\n"
+        cat_caption += f"**╭━━✠━━━━━━━ ✞✞ ━━━━━━━✠━━╮**\n"
         cat_caption += f"**{EMOJI} 𝐃𝐚𝐭𝐚 :** `{check_sgnirts}`\n"
         cat_caption += f"**{EMOJI} 𝐕𝐞𝐫𝐬𝐢 𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧 :** `{version.__version__}\n`"
         cat_caption += f"**{EMOJI} 𝐕𝐞𝐫𝐬𝐢 𝐁𝐨𝐭 :** `{catversion}`\n"
         cat_caption += f"**{EMOJI} 𝐕𝐞𝐫𝐬𝐢 𝐏𝐲𝐭𝐡𝐨𝐧 :** `{python_version()}\n`"
         cat_caption += f"**{EMOJI} 𝐔𝐩𝐭𝐢𝐦𝐞 :** `{uptime}\n`"
         cat_caption += f"**{EMOJI} 𝐁𝐨𝐬:** {mention}\n"
-        cat_caption += f"**╰━━━━━━━━━━━━━━━━━━━━━━╯**\n"
+        cat_caption += f"**╰━━✠━━━━━━━ ✞✞ ━━━━━━━✠━━╯**\n"
         await alive.client.send_file(
             alive.chat_id, CAT_IMG, caption=cat_caption, reply_to=reply_to_id
         )
@@ -36,15 +36,15 @@ async def amireallyalive(alive):
     else:
         await edit_or_reply(
             alive,
-            f"**━━━━━━━━ {CUSTOM_ALIVE_TEXT} ━━━━━━━━**\n"
-            f"**╭━━━━━━━━━━━━━━━━━━━━━━╮**\n"
+            f"**••━━━━━━ ✘ {CUSTOM_ALIVE_TEXT} ✘ ━━━━━━••**\n"
+            f"**╭━━✠━━━━━━━ ✞✞ ━━━━━━━✠━━╮**\n"
             f"**{EMOJI} 𝐃𝐚𝐭𝐚 :** `{check_sgnirts}`\n"
             f"**{EMOJI} 𝐕𝐞𝐫𝐬𝐢 𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧 :** `{version.__version__}\n`"
             f"**{EMOJI} 𝐕𝐞𝐫𝐬𝐢 𝐁𝐨𝐭 :** `{catversion}`\n"
             f"**{EMOJI} 𝐕𝐞𝐫𝐬𝐢 𝐏𝐲𝐭𝐡𝐨𝐧 :** `{python_version()}\n`"
             f"**{EMOJI} 𝐔𝐩𝐭𝐢𝐦𝐞 :** `{uptime}\n`"
             f"**{EMOJI} 𝐁𝐨𝐬:** {mention}\n"
-            f"**╰━━━━━━━━━━━━━━━━━━━━━━╯**\n",
+            f"**╰━━✠━━━━━━━ ✞✞ ━━━━━━━✠━━╯**\n",
         )
 
 
