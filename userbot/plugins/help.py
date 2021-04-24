@@ -64,9 +64,9 @@ async def cmd_list(event):
             await event.delete()
     else:
         if HELPTYPE is True:
-            help_string = f"Userbot Helper. Provided by {ALIVE_NAME} to reveal all the plugins\
-                          \nCheck `.help plugin name` for commands, in case popup doesn't appear.\
-                          \nCheck `.info plugin name` for usage of thoose plugins and commands"
+            help_string = f"𝐀𝐬𝐢𝐬𝐭𝐞𝐧 𝐔-𝐁𝐨𝐭. 𝐏𝐫𝐨𝐯𝐢𝐝𝐞𝐝 𝐛𝐲 {ALIVE_NAME} 𝐮𝐧𝐭𝐮𝐤 𝐦𝐞𝐥𝐚𝐤𝐮𝐤𝐚𝐧 𝐜𝐡𝐞𝐜𝐤 𝐤𝐞 𝐬𝐞𝐦𝐮𝐚 𝐩𝐥𝐮𝐠𝐢𝐧.\
+                          \n𝐂𝐡𝐞𝐜𝐤 `.help plugin name` 𝐡𝐚𝐧𝐲𝐚 𝐮𝐧𝐭𝐮𝐤 𝐜𝐨𝐦𝐦𝐚𝐧𝐝, 𝐭𝐢𝐝𝐚𝐤 𝐭𝐞𝐫𝐦𝐚𝐬𝐮𝐤 𝐟𝐮𝐧𝐠𝐬𝐢.\
+                          \n𝐂𝐡𝐞𝐜𝐤 `.info plugin name` 𝐮𝐧𝐭𝐮𝐤 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 𝐛𝐞𝐬𝐞𝐫𝐭𝐚 𝐟𝐮𝐧𝐠𝐬𝐢 𝐩𝐥𝐮𝐠𝐢𝐧 𝐭𝐞𝐫𝐬𝐞𝐛𝐮𝐭"
             tgbotusername = Config.TG_BOT_USERNAME
             results = await event.client.inline_query(tgbotusername, help_string)
             await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
@@ -77,8 +77,8 @@ async def cmd_list(event):
                 \n<b>𝐅𝐮𝐧𝐠𝐬𝐢:</b> <code>.help 𝐧𝐚𝐦𝐚 𝐩𝐥𝐮𝐠𝐢𝐧</code> \n\n"
             catcount = 0
             for i in sorted(CMD_LIST):
-                string += "◆◆ " + f"<code>{str(i)}</code>"
-                string += " "
+                string += "【﻿ " + f"<code>{str(i)}</code>"
+                string += "】 "
                 catcount += 1
             await event.edit(string.format(count=catcount), parse_mode="HTML")
 
@@ -140,8 +140,8 @@ async def info(event):
             \n<b>𝐅𝐮𝐧𝐠𝐬𝐢:</b> <code>.help 𝐧𝐚𝐦𝐚 𝐩𝐥𝐮𝐠𝐢𝐧</code>\n\n"
         catcount = 0
         for i in sorted(SUDO_LIST):
-            string += "◆◆ " + f"<code>{str(i)}</code>"
-            string += " "
+            string += "【﻿ " + f"<code>{str(i)}</code>"
+            string += "】 "
             catcount += 1
         await event.reply(string.format(count=catcount), parse_mode="HTML")
 
@@ -165,8 +165,8 @@ async def info(event):
             \n<b>𝐅𝐮𝐧𝐠𝐬𝐢 : </b><code>.info 𝐧𝐚𝐦𝐚 𝐩𝐥𝐮𝐠𝐢𝐧</code>\n\n"
         catcount = 0
         for i in sorted(CMD_HELP):
-            string += "◆◆ " + f"<code>{str(i)}</code>"
-            string += " "
+            string += "【﻿ " + f"<code>{str(i)}</code>"
+            string += "】 "
             catcount += 1
         if event.sender_id in Config.SUDO_USERS:
             await event.reply(string.format(count=catcount), parse_mode="HTML")
