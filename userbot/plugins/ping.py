@@ -9,7 +9,8 @@
 from datetime import datetime
 
 from speedtest import Speedtest
-from . import CMD_HELP, StartTime, ALIVE_NAME
+from userbot import CMD_HELP, StartTime
+from userbot.plugins import ALIVE_NAME
 from userbot.events import register
 import time
 
