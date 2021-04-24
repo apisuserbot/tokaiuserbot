@@ -68,18 +68,18 @@ async def pingme(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    await pong.edit("🔞")
-    await pong.edit("__**𝐓𝐎𝐊𝐀𝐈🔞**__")
-    await pong.edit("__**𝐓𝐎𝐊🔞𝐀𝐈**__")
-    await pong.edit("__**𝐓𝐎🔞𝐊𝐀𝐈**__")
-    await pong.edit("__**𝐓🔞𝐎𝐊𝐀𝐈**__")
-    await pong.edit("__**🔞𝐓𝐎𝐊𝐀𝐈🔞**__")
+    await pong.edit("✎")
+    await pong.edit("__**𝐓𝐨𝐤𝐚𝐢✎**__")
+    await pong.edit("__**𝐓𝐨𝐤✎𝐚𝐢**__")
+    await pong.edit("__**𝐓𝐨✎𝐤𝐚𝐢**__")
+    await pong.edit("__**𝐓✎𝐨𝐤𝐚𝐢**__")
+    await pong.edit("__**✞ 𝐓𝐨𝐤𝐚𝐢 ✞**__")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**🔞𝐓𝐎𝐊𝐀𝐈 𝐏𝐈𝐍𝐆🔞**\n"
-                    f"🔞 **𝐏𝐈𝐍𝐆:** "
+    await pong.edit(f"**✞ 𝐓𝐨𝐤𝐚𝐢 𝐏𝐢𝐧𝐠 ✞**\n"
+                    f"➠ **𝐏𝐢𝐧𝐠:** "
                     f"`%sms` \n"
-                    f"🔞 **𝐎𝐍𝐋𝐈𝐍𝐄:** "
+                    f"➠ **𝐎𝐧𝐥𝐢𝐧𝐞:** "
                     f"`{uptime}` \n" % (duration))
 
 
@@ -131,18 +131,18 @@ async def pingme(pong):
     await pong.edit("**100% ██████████**")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"- 𝐓𝐎𝐊𝐀𝐈 -\n"
-                    f"**• 𝐏𝐢𝐧𝐠  :** "
+    await pong.edit(f"✞ 𝐓𝐨𝐤𝐚𝐢 𝐔-𝐁𝐨𝐭 ✞\n"
+                    f"**➠ 𝐏𝐢𝐧𝐠  :** "
                     f"`%sms` \n"
-                    f"**• 𝐔𝐩𝐭𝐢𝐦𝐞  :** "
+                    f"**➠ 𝐔𝐩𝐭𝐢𝐦𝐞  :** "
                     f"`{uptime}` \n"
-                    f"**• 𝐎𝐰𝐧𝐞𝐫  :** `{ALIVE_NAME}`" % (duration))
+                    f"**➠ 𝐎𝐰𝐧𝐞𝐫  :** `{ALIVE_NAME}`" % (duration))
 
 
 @register(outgoing=True, pattern="^.speed$")
 async def speedtst(spd):
     """ For .speed command, use SpeedTest to check server speeds. """
-    await spd.edit("`𝐒𝐞𝐝𝐚𝐧𝐠 𝐭𝐞𝐬𝐭𝐢𝐧𝐠 𝐝𝐞𝐧𝐠𝐚𝐧 𝐡𝐢𝐠𝐡 𝐬𝐩𝐞𝐞𝐝...📡`")
+    await spd.edit("`𝐒𝐞𝐝𝐚𝐧𝐠 𝐭𝐞𝐬𝐭𝐢𝐧𝐠 𝐝𝐞𝐧𝐠𝐚𝐧 𝐡𝐢𝐠𝐡 𝐬𝐩𝐞𝐞𝐝...`")
     test = Speedtest()
 
     test.get_best_server()
@@ -152,18 +152,19 @@ async def speedtst(spd):
     result = test.results.dict()
 
     await spd.edit("**𝐓𝐞𝐬𝐭 𝐑𝐞𝐬𝐮𝐥𝐭:\n**"
+                   f" **━━━━━━━━━━━━━━━━━━━━━━**\n"
                    "✎ **𝐃𝐢𝐦𝐮𝐥𝐚𝐢 𝐏𝐚𝐝𝐚:** "
                    f"`{result['timestamp']}` \n"
-                   f" **━━━━━━━━━━━━━━━━━**\n\n"
                    "✎ **𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝:** "
                    f"`{speed_convert(result['download'])}` \n"
                    "✎ **𝐔𝐩𝐥𝐨𝐚𝐝:** "
                    f"`{speed_convert(result['upload'])}` \n"
                    "✎ **𝐏𝐢𝐧𝐠:** "
                    f"`{result['ping']}` \n"
-                   "❃ **𝐈𝐒𝐏:** "
+                   "✎ **𝐈𝐬𝐩:** "
                    f"`{result['client']['isp']}` \n"
-                   "❃ **𝐁𝐎𝐓:** `𝐓𝐨𝐤𝐚𝐢 𝐔-𝐁𝐨𝐭`")
+                   "✎ **𝐁𝐨𝐭:** `𝐓𝐨𝐤𝐚𝐢 𝐔-𝐁𝐨𝐭`")
+                   f" **━━━━━━━━━━━━━━━━━━━━━━** ")
 
 
 def speed_convert(size):
