@@ -252,7 +252,7 @@ async def source(e):
     await edit_or_reply(
         e,
         "➠ 𝐑𝐞𝐩𝐨 𝐎𝐰𝐧𝐞𝐫 : [𝐓𝐨𝐤𝐚𝐢](https://t.me/Insaynn)\
-        \n➠ 𝐁𝐚𝐬𝐞 𝐎𝐧 : [𝐂𝐚𝐭-𝐔𝐬𝐞𝐫𝐛𝐨𝐭](https://github.com/sandy1709/catuserbot) 𝐝𝐚𝐧 [𝐋𝐨𝐫𝐝-𝐔𝐬𝐞𝐫𝐛𝐨𝐭](https://github.com/Zora24/Lord-Userbot)",
+        \n➠ 𝐁𝐚𝐬𝐞 𝐎𝐧 : [𝐂𝐚𝐭-𝐔𝐬𝐞𝐫𝐛𝐨𝐭](https://github.com/sandy1709/catuserbot) - [𝐋𝐨𝐫𝐝-𝐔𝐬𝐞𝐫𝐛𝐨𝐭](https://github.com/Zora24/Lord-Userbot)",
     )
 
 
