@@ -77,8 +77,8 @@ async def cmd_list(event):
                 \n<b>𝐅𝐮𝐧𝐠𝐬𝐢:</b> <code>.help 𝐧𝐚𝐦𝐚 𝐩𝐥𝐮𝐠𝐢𝐧</code> \n\n"
             catcount = 0
             for i in sorted(CMD_LIST):
-                string += "【﻿ " + f"<code>{str(i)}</code>"
-                string += "】 "
+                string += "╔" + f"<code>{str(i)}</code>"
+                string += "╝"
                 catcount += 1
             await event.edit(string.format(count=catcount), parse_mode="HTML")
 
@@ -140,8 +140,8 @@ async def info(event):
             \n<b>𝐅𝐮𝐧𝐠𝐬𝐢:</b> <code>.help 𝐧𝐚𝐦𝐚 𝐩𝐥𝐮𝐠𝐢𝐧</code>\n\n"
         catcount = 0
         for i in sorted(SUDO_LIST):
-            string += "【﻿ " + f"<code>{str(i)}</code>"
-            string += "】 "
+            string += "╔" + f"<code>{str(i)}</code>"
+            string += "╝"
             catcount += 1
         await event.reply(string.format(count=catcount), parse_mode="HTML")
 
@@ -165,8 +165,8 @@ async def info(event):
             \n<b>𝐅𝐮𝐧𝐠𝐬𝐢 : </b><code>.info 𝐧𝐚𝐦𝐚 𝐩𝐥𝐮𝐠𝐢𝐧</code>\n\n"
         catcount = 0
         for i in sorted(CMD_HELP):
-            string += "【﻿ " + f"<code>{str(i)}</code>"
-            string += "】 "
+            string += "╔" + f"<code>{str(i)}</code>"
+            string += "╝"
             catcount += 1
         if event.sender_id in Config.SUDO_USERS:
             await event.reply(string.format(count=catcount), parse_mode="HTML")
