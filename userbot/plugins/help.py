@@ -11,7 +11,7 @@ from .sql_helper.globals import addgvar, gvarstatus
 async def cmd_list(event):
     if event.fwd_from:
         return
-    if gvarstatus("HELPTYPE") and gvarstatus("HELPTYPE") == "false":
+    if gvarstatus("HELPTYPE") and gvarstatus("HELPTYPE") == "true":
         HELPTYPE = False
     else:
         HELPTYPE = True
@@ -140,8 +140,8 @@ async def info(event):
             \n<b>𝐅𝐮𝐧𝐠𝐬𝐢:</b> <code>.help 𝐧𝐚𝐦𝐚 𝐩𝐥𝐮𝐠𝐢𝐧</code>\n\n"
         catcount = 0
         for i in sorted(SUDO_LIST):
-            string += "╔" + f"<code>{str(i)}</code>"
-            string += "╝"
+            string += "🔖" + f"<code>{str(i)}</code>"
+            string += "🔖"
             catcount += 1
         await event.reply(string.format(count=catcount), parse_mode="HTML")
 
@@ -165,8 +165,8 @@ async def info(event):
             \n<b>𝐅𝐮𝐧𝐠𝐬𝐢 : </b><code>.info 𝐧𝐚𝐦𝐚 𝐩𝐥𝐮𝐠𝐢𝐧</code>\n\n"
         catcount = 0
         for i in sorted(CMD_HELP):
-            string += "╔" + f"<code>{str(i)}</code>"
-            string += "╝"
+            string += "🔖" + f"<code>{str(i)}</code>"
+            string += "🔖"
             catcount += 1
         if event.sender_id in Config.SUDO_USERS:
             await event.reply(string.format(count=catcount), parse_mode="HTML")
@@ -199,7 +199,7 @@ async def _(event):
         return
     input_str = event.pattern_match.group(1)
     h_type = input_str == "true"
-    if gvarstatus("HELPTYPE") and gvarstatus("HELPTYPE") == "false":
+    if gvarstatus("HELPTYPE") and gvarstatus("HELPTYPE") == "true":
         HELPTYPE = False
     else:
         HELPTYPE = True
