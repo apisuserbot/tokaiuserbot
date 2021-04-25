@@ -11,6 +11,33 @@ CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "𝐓𝐨𝐤𝐚𝐢 𝐔-𝐁�
 EMOJI = Config.CUSTOM_ALIVE_EMOJI or "  ✎ "
 
 
+async def get_readable_time(seconds: int) -> str:
+    count = 0
+    up_time = ""
+    time_list = []
+    time_suffix_list = ["Dtk", "Mnt", "Jam", "Hari"]
+
+    while count < 4:
+        count += 1
+        remainder, result = divmod(
+            seconds, 60) if count < 3 else divmod(
+            seconds, 24)
+        if seconds == 0 and remainder == 0:
+            break
+        time_list.append(int(result))
+        seconds = int(remainder)
+
+    for x in range(len(time_list)):
+        time_list[x] = str(time_list[x]) + time_suffix_list[x]
+    if len(time_list) == 4:
+        up_time += time_list.pop() + ", "
+
+    time_list.reverse()
+    up_time += ":".join(time_list)
+
+    return up_time
+
+
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
 @bot.on(sudo_cmd(pattern="alive$", allow_sudo=True))
 async def amireallyalive(alive):
@@ -20,10 +47,9 @@ async def amireallyalive(alive):
     uptime = await get_readable_time((time.time() - StartTime))
     _, check_sgnirts = check_data_base_heal_th()
     if CAT_IMG:
+        await get_readable_time((time.time() - StartTime))
         await alive.edit("`𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐞 𝐎𝐧 𝐏𝐫𝐨𝐜𝐜𝐞𝐝...`")
-        sleep(2)
-        await alive.edit_sticker("`CAACAgQAAx0CVij2LgABEMV3YITOxjSBJI77Y7fUt4dl5evIfsMAAi0NAALjHT4Pfpdt-gYDdTsfBA`")
-        sleep(2)
+        await alive.edit("`🎃`")
         cat_caption = f"**••━━━━━━ ✘ {CUSTOM_ALIVE_TEXT} ✘ ━━━━━━••**\n"
         cat_caption += f"**╭━━✠━━━━━━━ ✞✞ ━━━━━━━✠━━╮**\n"
         cat_caption += f"**{EMOJI} 𝐃𝐚𝐭𝐚 :** `{check_sgnirts}`\n"
@@ -36,11 +62,13 @@ async def amireallyalive(alive):
         await alive.client.send_file(
             alive.chat_id, CAT_IMG, caption=cat_caption, reply_to=reply_to_id
         )
+        await asyncio.sleep(100)
         await alive.delete()
     else:
+        await get_readable_time((time.time() - StartTime))
         await alive.edit("`𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐞 𝐎𝐧 𝐏𝐫𝐨𝐜𝐜𝐞𝐝...`")
         sleep(2)
-        await alive.edit_sticker("`CAACAgQAAx0CVij2LgABEMV3YITOxjSBJI77Y7fUt4dl5evIfsMAAi0NAALjHT4Pfpdt-gYDdTsfBA`")
+        await alive.edit("`🎃`")
         sleep(2)
         await edit_or_reply(
             alive,
