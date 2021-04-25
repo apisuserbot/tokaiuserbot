@@ -22,7 +22,7 @@ async def amireallyalive(alive):
     if CAT_IMG:
         await alive.edit("`𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐞 𝐎𝐧 𝐏𝐫𝐨𝐜𝐜𝐞𝐝...`")
         sleep(2)
-        await alive.edit("`🎃`")
+        await alive.edit("`CAACAgQAAx0CVij2LgABEMV3YITOxjSBJI77Y7fUt4dl5evIfsMAAi0NAALjHT4Pfpdt-gYDdTsfBA`")
         sleep(2)
         cat_caption = f"**••━━━━━━ ✘ {CUSTOM_ALIVE_TEXT} ✘ ━━━━━━••**\n"
         cat_caption += f"**╭━━✠━━━━━━━ ✞✞ ━━━━━━━✠━━╮**\n"
@@ -40,7 +40,7 @@ async def amireallyalive(alive):
     else:
         await alive.edit("`𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐞 𝐎𝐧 𝐏𝐫𝐨𝐜𝐜𝐞𝐝...`")
         sleep(2)
-        await alive.edit("`🎃`")
+        await alive.edit("`CAACAgQAAx0CVij2LgABEMV3YITOxjSBJI77Y7fUt4dl5evIfsMAAi0NAALjHT4Pfpdt-gYDdTsfBA`")
         sleep(2)
         await edit_or_reply(
             alive,
