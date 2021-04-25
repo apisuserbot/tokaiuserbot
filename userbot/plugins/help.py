@@ -11,7 +11,7 @@ from .sql_helper.globals import addgvar, gvarstatus
 async def cmd_list(event):
     if event.fwd_from:
         return
-    if gvarstatus("HELPTYPE") and gvarstatus("HELPTYPE") == "true":
+    if gvarstatus("HELPTYPE") and gvarstatus("HELPTYPE") == "false":
         HELPTYPE = False
     else:
         HELPTYPE = True
@@ -199,7 +199,7 @@ async def _(event):
         return
     input_str = event.pattern_match.group(1)
     h_type = input_str == "true"
-    if gvarstatus("HELPTYPE") and gvarstatus("HELPTYPE") == "true":
+    if gvarstatus("HELPTYPE") and gvarstatus("HELPTYPE") == "false":
         HELPTYPE = False
     else:
         HELPTYPE = True
