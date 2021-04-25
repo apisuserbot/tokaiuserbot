@@ -20,8 +20,7 @@ async def amireallyalive(alive):
     uptime = await get_readable_time((time.time() - StartTime))
     _, check_sgnirts = check_data_base_heal_th()
     if CAT_IMG:
-        await alive.edit("`𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐞 𝐎𝐧 𝐏𝐫𝐨𝐜𝐜𝐞𝐝...`")
-        sleep(2)
+        await alive.edit("⚡")
         await alive.edit("`𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐢𝐧𝐠...0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒`")
         await alive.edit("`𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐢𝐧𝐠...4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒`")
         await alive.edit("`𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐢𝐧𝐠...8%\n███▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒`")
@@ -34,7 +33,7 @@ async def amireallyalive(alive):
         sleep(1)
         await alive.edit("`𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐢𝐧𝐠...100%\n█████████████████████████`")
         sleep(1)
-        await alive.edit("`𝐒𝐲𝐬𝐭𝐞𝐦 𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐞𝐝!!!`")
+        await alive.edit("⚡")
         sleep(2)
         cat_caption = f"**••━━━━━━ ✘ {CUSTOM_ALIVE_TEXT} ✘ ━━━━━━••**\n"
         cat_caption += f"**╭━━✠━━━━━━━ ✞✞ ━━━━━━━✠━━╮**\n"
