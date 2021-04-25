@@ -59,26 +59,26 @@ async def cmd_list(event):
                 string.format(count=catcount, input_str=input_str), parse_mode="HTML"
             )
         else:
-            await event.edit(input_str + " 𝐭𝐢𝐝𝐚𝐤 𝐚𝐝𝐚 𝐝𝐚𝐥𝐚𝐦 𝐩𝐥𝐮𝐠𝐢𝐧!")
+            await event.edit(input_str + " is not a valid plugin!")
             await asyncio.sleep(3)
             await event.delete()
     else:
         if HELPTYPE is True:
-            help_string = f"𝐀𝐬𝐢𝐬𝐭𝐞𝐧 𝐔-𝐁𝐨𝐭. 𝐏𝐫𝐨𝐯𝐢𝐝𝐞𝐝 𝐛𝐲 {ALIVE_NAME} 𝐮𝐧𝐭𝐮𝐤 𝐦𝐞𝐥𝐚𝐤𝐮𝐤𝐚𝐧 𝐜𝐡𝐞𝐜𝐤 𝐤𝐞 𝐬𝐞𝐦𝐮𝐚 𝐩𝐥𝐮𝐠𝐢𝐧.\
-                          \n𝐂𝐡𝐞𝐜𝐤 `.help plugin name` 𝐡𝐚𝐧𝐲𝐚 𝐮𝐧𝐭𝐮𝐤 𝐜𝐨𝐦𝐦𝐚𝐧𝐝, 𝐭𝐢𝐝𝐚𝐤 𝐭𝐞𝐫𝐦𝐚𝐬𝐮𝐤 𝐟𝐮𝐧𝐠𝐬𝐢.\
-                          \n𝐂𝐡𝐞𝐜𝐤 `.info plugin name` 𝐮𝐧𝐭𝐮𝐤 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 𝐛𝐞𝐬𝐞𝐫𝐭𝐚 𝐟𝐮𝐧𝐠𝐬𝐢 𝐩𝐥𝐮𝐠𝐢𝐧 𝐭𝐞𝐫𝐬𝐞𝐛𝐮𝐭"
+            help_string = f"Userbot Helper. Provided by {ALIVE_NAME} to reveal all the plugins\
+                          \nCheck `.help plugin name` for commands, in case popup doesn't appear.\
+                          \nCheck `.info plugin name` for usage of thoose plugins and commands"
             tgbotusername = Config.TG_BOT_USERNAME
             results = await event.client.inline_query(tgbotusername, help_string)
             await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
             await event.delete()
         else:
-            string = "<b>𝐁𝐞𝐫𝐢 𝐬𝐩𝐞𝐬𝐢𝐟𝐢𝐤𝐚𝐬𝐢 𝐩𝐥𝐮𝐠𝐢𝐧 𝐦𝐚𝐧𝐚 𝐲𝐚𝐧𝐠 𝐢𝐧𝐠𝐢𝐧 𝐤𝐚𝐦𝐮 𝐡𝐞𝐥𝐩 !!\
-                \n𝐉𝐮𝐦𝐥𝐚𝐡 𝐩𝐥𝐮𝐠𝐢𝐧 : </b><code>{count}</code>\
-                \n<b>𝐅𝐮𝐧𝐠𝐬𝐢:</b> <code>.help 𝐧𝐚𝐦𝐚 𝐩𝐥𝐮𝐠𝐢𝐧</code> \n\n"
+            string = "<b>Please specify which plugin do you want help for !!\
+                \nNumber of plugins : </b><code>{count}</code>\
+                \n<b>Usage:</b> <code>.help plugin name</code> \n\n"
             catcount = 0
             for i in sorted(CMD_LIST):
-                string += "☾" + f"<code>{str(i)}</code>"
-                string += "☽"
+                string += "◆ " + f"<code>{str(i)}</code>"
+                string += " "
                 catcount += 1
             await event.edit(string.format(count=catcount), parse_mode="HTML")
 
@@ -130,18 +130,18 @@ async def info(event):
                 string.format(count=catcount, input_str=input_str), parse_mode="HTML"
             )
         else:
-            reply = await event.reply(input_str + " 𝐭𝐢𝐝𝐚𝐤 𝐚𝐝𝐚 𝐝𝐚𝐥𝐚𝐦 𝐩𝐥𝐮𝐠𝐢𝐧!")
+            reply = await event.reply(input_str + " is not a valid plugin!")
             await asyncio.sleep(3)
             await event.delete()
             await reply.delete()
     else:
-        string = "<b>𝐁𝐞𝐫𝐢 𝐬𝐩𝐞𝐬𝐢𝐟𝐢𝐤𝐚𝐬𝐢 𝐩𝐥𝐮𝐠𝐢𝐧 𝐦𝐚𝐧𝐚 𝐲𝐚𝐧𝐠 𝐢𝐧𝐠𝐢𝐧 𝐤𝐚𝐦𝐮 𝐡𝐞𝐥𝐩 !!\
-            \n𝐉𝐮𝐦𝐥𝐚𝐡 𝐩𝐥𝐮𝐠𝐢𝐧 : </b><code>{count}</code>\
-            \n<b>𝐅𝐮𝐧𝐠𝐬𝐢:</b> <code>.help 𝐧𝐚𝐦𝐚 𝐩𝐥𝐮𝐠𝐢𝐧</code>\n\n"
+        string = "<b>Please specify which plugin do you want help for !!\
+            \nNumber of plugins : </b><code>{count}</code>\
+            \n<b>Usage:</b> <code>.help plugin name</code>\n\n"
         catcount = 0
         for i in sorted(SUDO_LIST):
-            string += "☾" + f"<code>{str(i)}</code>"
-            string += "☽"
+            string += "◆ " + f"<code>{str(i)}</code>"
+            string += " "
             catcount += 1
         await event.reply(string.format(count=catcount), parse_mode="HTML")
 
@@ -156,17 +156,17 @@ async def info(event):
         if args in CMD_HELP:
             await edit_or_reply(event, str(CMD_HELP[args]))
         else:
-            event = await edit_or_reply(event, "𝐏𝐥𝐮𝐠𝐢𝐧 𝐭𝐢𝐝𝐚𝐤 𝐚𝐝𝐚!!!")
+            event = await edit_or_reply(event, "Please specify a valid plugin name.")
             await asyncio.sleep(3)
             await event.delete()
     else:
-        string = "<b>𝐁𝐞𝐫𝐢 𝐬𝐩𝐞𝐬𝐢𝐟𝐢𝐤𝐚𝐬𝐢 𝐩𝐥𝐮𝐠𝐢𝐧 𝐦𝐚𝐧𝐚 𝐲𝐚𝐧𝐠 𝐢𝐧𝐠𝐢𝐧 𝐤𝐚𝐦𝐮 𝐡𝐞𝐥𝐩 !!\
-            \n𝐉𝐮𝐦𝐥𝐚𝐡 𝐩𝐥𝐮𝐠𝐢𝐧 : </b><code>{count}</code>\
-            \n<b>𝐅𝐮𝐧𝐠𝐬𝐢 : </b><code>.info 𝐧𝐚𝐦𝐚 𝐩𝐥𝐮𝐠𝐢𝐧</code>\n\n"
+        string = "<b>Please specify which plugin do you want help for !!\
+            \nNumber of plugins : </b><code>{count}</code>\
+            \n<b>Usage : </b><code>.info plugin name</code>\n\n"
         catcount = 0
         for i in sorted(CMD_HELP):
-            string += "☾" + f"<code>{str(i)}</code>"
-            string += "☽"
+            string += "◆ " + f"<code>{str(i)}</code>"
+            string += " "
             catcount += 1
         if event.sender_id in Config.SUDO_USERS:
             await event.reply(string.format(count=catcount), parse_mode="HTML")
@@ -205,16 +205,16 @@ async def _(event):
         HELPTYPE = True
     if HELPTYPE:
         if h_type:
-            await event.edit("`𝐈𝐧𝐥𝐢𝐧𝐞 𝐦𝐨𝐝𝐞 𝐭𝐞𝐥𝐚𝐡 𝐡𝐢𝐝𝐮𝐩!!!`")
+            await event.edit("`inline mode is already enabled`")
         else:
             addgvar("HELPTYPE", h_type)
-            await event.edit("`𝐈𝐧𝐥𝐢𝐧𝐞 𝐦𝐨𝐝𝐞 𝐝𝐢𝐦𝐚𝐭𝐢𝐤𝐚𝐧!!!`")
+            await event.edit("`inline mode is disabled`")
     else:
         if h_type:
             addgvar("HELPTYPE", h_type)
-            await event.edit("`𝐈𝐧𝐥𝐢𝐧𝐞 𝐦𝐨𝐝𝐞 𝐝𝐢𝐡𝐢𝐝𝐮𝐩𝐤𝐚𝐧!!!`")
+            await event.edit("`inline mode is enabled`")
         else:
-            await event.edit("`𝐈𝐧𝐥𝐢𝐧𝐞 𝐦𝐨𝐝𝐞 𝐭𝐞𝐥𝐚𝐡 𝐦𝐚𝐭𝐢!!!`")
+            await event.edit("`inline mode is already disabled`")
 
 
 CMD_HELP.update(
