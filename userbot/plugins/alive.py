@@ -1,6 +1,6 @@
 import time
 from platform import python_version
-
+from time import sleep
 from telethon import version
 
 from . import ALIVE_NAME, StartTime, catversion, get_readable_time, mention, reply_id
@@ -21,7 +21,9 @@ async def amireallyalive(alive):
     _, check_sgnirts = check_data_base_heal_th()
     if CAT_IMG:
         await alive.edit("`𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐞 𝐎𝐧 𝐏𝐫𝐨𝐜𝐜𝐞𝐝...`")
-        await alive.edit("`☠`")
+        sleep(2)
+        await alive.edit("`🎃`")
+        sleep(2)
         cat_caption = f"**••━━━━━━ ✘ {CUSTOM_ALIVE_TEXT} ✘ ━━━━━━••**\n"
         cat_caption += f"**╭━━✠━━━━━━━ ✞✞ ━━━━━━━✠━━╮**\n"
         cat_caption += f"**{EMOJI} 𝐃𝐚𝐭𝐚 :** `{check_sgnirts}`\n"
@@ -37,36 +39,21 @@ async def amireallyalive(alive):
         await alive.delete()
     else:
         await alive.edit("`𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐞 𝐎𝐧 𝐏𝐫𝐨𝐜𝐜𝐞𝐝...`")
-        await alive.edit("`☠`")
+        sleep(2)
+        await alive.edit("`🎃`")
+        sleep(2)
         await edit_or_reply(
             alive,
-            f"**••━━━━━━ ✘ {CUSTOM_ALIVE_TEXT} ✘ ━━━━━━••**\n"
-            f"**╭━━✠━━━━━━━ ✞✞ ━━━━━━━✠━━╮**\n"
+            f"**••━━━━━ ✘ {CUSTOM_ALIVE_TEXT} ✘ ━━━━━••**\n"
+            f"**╭━━✠━━━━━━ ✞✞ ━━━━━━✠━━╮**\n"
             f"**{EMOJI} 𝐃𝐚𝐭𝐚 :** `{check_sgnirts}`\n"
             f"**{EMOJI} 𝐕𝐞𝐫𝐬𝐢 𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧 :** `{version.__version__}\n`"
             f"**{EMOJI} 𝐕𝐞𝐫𝐬𝐢 𝐁𝐨𝐭 :** `{catversion}`\n"
             f"**{EMOJI} 𝐕𝐞𝐫𝐬𝐢 𝐏𝐲𝐭𝐡𝐨𝐧 :** `{python_version()}\n`"
             f"**{EMOJI} 𝐔𝐩𝐭𝐢𝐦𝐞 :** `{uptime}\n`"
             f"**{EMOJI} 𝐁𝐨𝐬:** {mention}\n"
-            f"**╰━━✠━━━━━━━ ✞✞ ━━━━━━━✠━━╯**\n",
+            f"**╰━━✠━━━━━━ ✞✞ ━━━━━━✠━━╯**\n",
         )
-
-
-@bot.on(admin_cmd(outgoing=True, pattern="ialive$"))
-@bot.on(sudo_cmd(pattern="ialive$", allow_sudo=True))
-async def amireallyalive(alive):
-    if alive.fwd_from:
-        return
-    tgbotusername = Config.TG_BOT_USERNAME
-    reply_to_id = await reply_id(alive)
-    cat_caption = f"**✖ 𝐓𝐨𝐤𝐚𝐢 𝐔-𝐁𝐨𝐭 ✖**\n"
-    cat_caption += f"**  𝐕𝐞𝐫𝐬𝐢 𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧 :** `{version.__version__}\n`"
-    cat_caption += f"**  𝐕𝐞𝐫𝐬𝐢 𝐁𝐨𝐭 :** `{catversion}`\n"
-    cat_caption += f"**  𝐕𝐞𝐫𝐬𝐢 𝐏𝐲𝐭𝐡𝐨𝐧 :** `{python_version()}\n`"
-    cat_caption += f"**  𝐁𝐨𝐬:** {mention}\n"
-    results = await bot.inline_query(tgbotusername, cat_caption)  # pylint:disable=E0602
-    await results[0].click(alive.chat_id, reply_to=reply_to_id, hide_via=True)
-    await alive.delete()
 
 
 # UniBorg Telegram UseRBot
@@ -105,8 +92,6 @@ CMD_HELP.update(
         "alive": "**Plugin :** `alive`\
       \n\n  •  **Syntax : **`.alive` \
       \n  •  **Function : **__status of bot will be showed__\
-      \n\n  •  **Syntax : **`.ialive` \
-      \n  •  **Function : **__inline status of bot will be shown.__\
       \nSet `ALIVE_PIC` var for media in alive message"
     }
 )
