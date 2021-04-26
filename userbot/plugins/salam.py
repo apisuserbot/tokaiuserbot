@@ -13,38 +13,38 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
-    await typew.edit(f"**𝐋𝐔 𝐊𝐎𝐍𝐓𝐎𝐋!!!**")
+    await typew.edit(f"**𝗟𝘂 𝗞𝗼𝗻𝘁𝗼𝗹!!!**")
     sleep(3)
-    await typew.edit("`𝐊𝐎𝐍𝐓𝐎𝐋 𝐊𝐎𝐍𝐓𝐎𝐋 𝐊𝐎𝐍𝐓𝐎𝐋!!!`")
+    await typew.edit("`𝗞𝗼𝗻𝘁𝗼𝗹 𝗞𝗼𝗻𝘁𝗼𝗹 𝗞𝗼𝗻𝘁𝗼𝗹!!!`")
     sleep(3)
-    await typew.edit("`𝐃𝐀𝐒𝐀𝐑 𝐊𝐄𝐏𝐀𝐋𝐀 𝐊𝐎𝐍𝐓𝐎𝐋!!!`")
+    await typew.edit("`𝗗𝗮𝘀𝗮𝗿 𝗞𝗲𝗽𝗮𝗹𝗮 𝗞𝗼𝗻𝘁𝗼𝗹!!!`")
 
 
 @register(outgoing=True, pattern='^G(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
-    await typew.edit(f"**𝐄𝐦𝐦... 𝐛𝐞𝐧𝐭𝐚𝐫 𝐠𝐮𝐚 𝐩𝐢𝐤𝐢𝐫 𝐝𝐮𝐥𝐮...**")
+    await typew.edit(f"**𝗘𝗺𝗺... 𝗯𝗲𝗻𝘁𝗮𝗿 𝗴𝘂𝗮 𝗽𝗶𝗸𝗶𝗿 𝗱𝘂𝗹𝘂...**")
     sleep(3)
-    await typew.edit("`𝐆𝐚 𝐝𝐮𝐥𝐮 𝐝𝐞𝐡.`")
+    await typew.edit("`𝗚𝗮 𝗱𝘂𝗹𝘂 𝗱𝗲𝗵..`")
 
 
 @register(outgoing=True, pattern='^P(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
-    await typew.edit(f"**𝐇𝐚𝐥𝐨𝐨𝐨, 𝐤𝐞𝐧𝐚𝐥𝐢𝐧 𝐠𝐮𝐚 {DEFAULTUSER}**")
+    await typew.edit(f"**𝗛𝗮𝗹𝗼𝗼𝗼.... 𝗞𝗲𝗻𝗮𝗹𝗶𝗻 𝗡𝗮𝗺𝗮 𝗚𝘂𝗮 {DEFAULTUSER}**")
     sleep(2)
-    await typew.edit("`𝐒𝐚𝐥𝐚𝐦 𝐊𝐞𝐧𝐚𝐥.....`")
+    await typew.edit("`𝗦𝗮𝗹𝗮𝗺 𝗞𝗲𝗻𝗮𝗹....`")
 
 
 @register(outgoing=True, pattern='^L(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
-    await typew.edit("`𝐉𝐚𝐰𝐚𝐛 𝐬𝐚𝐥𝐚𝐦 𝐝𝐮𝐥𝐮 𝐚𝐡𝐡...`")
+    await typew.edit("`𝗘𝗵𝗵 𝗔𝗱𝗮 𝗬𝗮𝗻𝗴 𝗦𝗮𝗹𝗮𝗺...`")
     sleep(1)
-    await typew.edit("`𝐖𝐚𝐚𝐥𝐚𝐢𝐤𝐮𝐦𝐬𝐚𝐥𝐚𝐦......`")
+    await typew.edit("`𝗪𝗮'𝗮𝗹𝗮𝗶𝗸𝘂𝗺𝘀𝗮𝗹𝗮𝗺...`")
 
 
 CMD_HELP.update({
@@ -52,5 +52,9 @@ CMD_HELP.update({
     "`P`\
 \nUsage: Untuk Memberi Hujatan.\
 \n\n`L`\
-\nUsage: Untuk Menjawab Salam."
+\nUsage: Untuk Menjawab Salam.\
+\n\n`G`\
+\nUsage: Untuk Menolak.\
+\n\n`kntl`\
+\nUsage: Toxic Abis."
 })
