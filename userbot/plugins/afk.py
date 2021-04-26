@@ -54,7 +54,7 @@ async def set_not_afk(event):
     ):
         shite = await event.client.send_message(
             event.chat_id,
-            "`➠ 𝗔𝗸𝘂 𝗦𝘂𝗱𝗮𝗵 𝗞𝗲𝗺𝗯𝗮𝗹𝗶!!\n➠ 𝐓𝐞𝐥𝐚𝐡 𝐚𝐟𝐤 𝐬𝐞𝐥𝐚𝐦𝐚 " + endtime + "`",
+            "`➠ 𝗔𝗸𝘂 𝗦𝘂𝗱𝗮𝗵 𝗞𝗲𝗺𝗯𝗮𝗹𝗶!!\n➠ 𝗧𝗲𝗹𝗮𝗵 𝗔𝗳𝗸 𝗦𝗲𝗹𝗮𝗺𝗮 " + endtime + "`",
         )
         AFK_.USERAFK_ON = {}
         AFK_.afk_time = None
@@ -236,10 +236,10 @@ async def _(event):
         AFK_.USERAFK_ON = f"on: {AFK_.reason}"
         if AFK_.reason:
             await edit_delete(
-                event, f"`𝐀𝐤𝐮 𝐡𝐚𝐫𝐮𝐬 𝐀𝐅𝐊 𝐤𝐚𝐫𝐞𝐧𝐚!!! ~` {AFK_.reason}", 5
+                event, f"`𝗔𝗰𝘁𝗶𝘃𝗮𝘁𝗶𝗻𝗴 𝗔𝗙𝗞 𝗦𝘆𝘀𝘁𝗲𝗺!! ~` {AFK_.reason}", 5
             )
         else:
-            await edit_delete(event, f"`𝐀𝐤𝐮 𝐡𝐚𝐫𝐮𝐬 𝐀𝐅𝐊!!! `", 5)
+            await edit_delete(event, f"`𝗔𝗰𝘁𝗶𝘃𝗮𝘁𝗶𝗻𝗴 𝗔𝗙𝗞 𝗦𝘆𝘀𝘁𝗲𝗺!! `", 5)
         AFK_.media_afk = await reply.forward_to(BOTLOG_CHATID)
         if AFK_.reason:
             await event.client.send_message(
