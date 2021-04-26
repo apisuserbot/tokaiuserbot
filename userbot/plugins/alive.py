@@ -39,11 +39,11 @@ async def amireallyalive(alive):
         cat_caption = f"**•━━━━━━ ✘ {CUSTOM_ALIVE_TEXT} ✘ ━━━━━━•**\n"
         cat_caption += f"**╭━━✠━━━━━━━ ✞✞ ━━━━━━━✠━━╮**\n"
         cat_caption += f"**{EMOJI} 𝗗𝗮𝘁𝗮 :** `{check_sgnirts}`\n"
-        cat_caption += f"**{EMOJI} 𝗩𝗲𝗿𝘀𝗶 𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻 :** `{version.__version__}\n`"
-        cat_caption += f"**{EMOJI} 𝗩𝗲𝗿𝘀𝗶 𝗕𝗼𝘁 :** `{catversion}`\n"
-        cat_caption += f"**{EMOJI} 𝗩𝗲𝗿𝘀𝗶 𝗣𝗵𝘆𝘁𝗼𝗻 :** `{python_version()}\n`"
+        cat_caption += f"**{EMOJI} 𝗩-𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻 :** `{version.__version__}\n`"
+        cat_caption += f"**{EMOJI} 𝗩-𝗕𝗼𝘁 :** `{catversion}`\n"
+        cat_caption += f"**{EMOJI} 𝗩-𝗣𝗵𝘆𝘁𝗼𝗻 :** `{python_version()}\n`"
         cat_caption += f"**{EMOJI} 𝗨𝗽𝘁𝗶𝗺𝗲 :** `{uptime}\n`"
-        cat_caption += f"**{EMOJI} 𝗕𝗼𝘀:** {mention}\n"
+        cat_caption += f"**{EMOJI} 𝗕𝗼𝘀 :** {mention}\n"
         cat_caption += f"**╰━━✠━━━━━━━ ✞✞ ━━━━━━━✠━━╯**\n"
         await alive.client.send_file(
             alive.chat_id, CAT_IMG, caption=cat_caption, reply_to=reply_to_id
@@ -71,11 +71,11 @@ async def amireallyalive(alive):
             f"**•━━━━━ ✘ {CUSTOM_ALIVE_TEXT} ✘ ━━━━━•**\n"
             f"**╭━━✠━━━━━━ ✞✞ ━━━━━━✠━━╮**\n"
             f"**{EMOJI} 𝗗𝗮𝘁𝗮 :** `{check_sgnirts}`\n"
-            f"**{EMOJI} 𝗩𝗲𝗿𝘀𝗶 𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻 :** `{version.__version__}\n`"
-            f"**{EMOJI} 𝗩𝗲𝗿𝘀𝗶 𝗕𝗼𝘁 :** `{catversion}`\n"
-            f"**{EMOJI} 𝗩𝗲𝗿𝘀𝗶 𝗣𝗵𝘆𝘁𝗼𝗻 :** `{python_version()}\n`"
+            f"**{EMOJI} 𝗩-𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻 :** `{version.__version__}\n`"
+            f"**{EMOJI} 𝗩-𝗕𝗼𝘁 :** `{catversion}`\n"
+            f"**{EMOJI} 𝗩-𝗣𝗵𝘆𝘁𝗼𝗻 :** `{python_version()}\n`"
             f"**{EMOJI} 𝗨𝗽𝘁𝗶𝗺𝗲 :** `{uptime}\n`"
-            f"**{EMOJI} 𝗕𝗼𝘀:** {mention}\n"
+            f"**{EMOJI} 𝗕𝗼𝘀 :** {mention}\n"
             f"**╰━━✠━━━━━━ ✞✞ ━━━━━━✠━━╯**\n",
         )
 
