@@ -77,11 +77,13 @@ async def pingme(pong):
     await pong.edit("__**✞ 𝗧𝗼𝗸𝗮𝗶 ✞**__")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**✞ 𝗧𝗼𝗸𝗮𝗶 𝗨-𝗕𝗼𝘁 ✞**\n"
+    await pong.edit(f"**══━━━ ✞ 𝗧𝗼𝗸𝗮𝗶 𝗨-𝗕𝗼𝘁 ✞ ━━━══**\n"
+                    f"╔═══════════════════╗ \n"
                     f"➠ **𝗣𝗶𝗻𝗴 :** "
                     f"`%sms` \n"
                     f"➠ **𝗨𝗽𝘁𝗶𝗺𝗲 :** "
-                    f"`{uptime}` \n" % (duration))
+                    f"`{uptime}` \n"
+                    f"╚═══════════════════╝" % (duration))
 
 
 @register(outgoing=True, pattern="^.xping$")
@@ -93,9 +95,9 @@ async def pingme(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(f"**🏓𝗣𝗼𝗻𝗴!!**\n"
-                    f"➠ __𝗣𝗶𝗻𝗴:__ "
+                    f"➠ __𝗣𝗶𝗻𝗴 :__ "
                     f"`%sms` \n"
-                    f"➠ __𝗨𝗽𝘁𝗶𝗺𝗲:__ "
+                    f"➠ __𝗨𝗽𝘁𝗶𝗺𝗲 :__ "
                     f"`{uptime}` \n" % (duration))
 
 
@@ -110,12 +112,14 @@ async def pingme(pong):
     await pong.edit("**🏓𝗣𝗼𝗻𝗴!!**")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**✠ 𝗧𝗼𝗸𝗮𝗶 𝗨-𝗕𝗼𝘁 ✠**\n"
+    await pong.edit(f"**══━━━ ✠ 𝗧𝗼𝗸𝗮𝗶 𝗨-𝗕𝗼𝘁 ✠ ━━━══**\n"
+                    f"╔═══════════════════╗ \n"
                     f"➠ **𝗣𝗶𝗻𝗴 :** "
                     f"`%sms` \n"
                     f"➠ **𝗨𝗽𝘁𝗶𝗺𝗲 :** "
                     f"`{uptime}` \n"
-                    f"**➠ 𝗢𝘄𝗻𝗲𝗿 :** `{ALIVE_NAME}`" % (duration))
+                    f"**➠ 𝗢𝘄𝗻𝗲𝗿 :** `{ALIVE_NAME}`"
+                    f"╚═══════════════════╝" % (duration))
 
 
 @register(outgoing=True, pattern="^.sinyal$")
@@ -132,7 +136,7 @@ async def pingme(pong):
     await pong.edit("**100% ██████████**")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**           ✞ 𝗧𝗼𝗸𝗮𝗶 𝗨-𝗕𝗼𝘁 ✞** \n"
+    await pong.edit(f"**══━━━ ✞ 𝗧𝗼𝗸𝗮𝗶 𝗨-𝗕𝗼𝘁 ━━━══ ✞** \n"
                     f"╔═══════════════════╗ \n"
                     f"**➠ 𝗣𝗶𝗻𝗴  :** "
                     f"`%sms` \n"
@@ -154,9 +158,9 @@ async def speedtst(spd):
     test.results.share()
     result = test.results.dict()
 
-    await spd.edit("**𝗧𝗲𝘀𝘁 𝗥𝗲𝘀𝘂𝗹𝘁:\n**"
+    await spd.edit("**𝗧𝗲𝘀𝘁 𝗥𝗲𝘀𝘂𝗹𝘁 \n**"
                    f" **━━━━━━━━━━━━━━━━━━━━━━**\n"
-                   "✎ **𝗗𝗶𝗺𝘂𝗹𝗮𝗶 𝗣𝗮𝗱𝗮:** "
+                   "✎ **𝗧𝗲𝘀𝘁 𝗮𝘁 :** "
                    f"`{result['timestamp']}` \n"
                    "✎ **𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 :** "
                    f"`{speed_convert(result['download'])}` \n"
