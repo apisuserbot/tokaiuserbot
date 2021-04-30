@@ -15,7 +15,7 @@ from userbot import CMD_HELP, bot
 # Ngapain Kesini Ajg Hus
 
 
-@register(outgoing=True, pattern="^.tiny(?: |$)(.*)", disable_errors=True)
+@bot.on(admin_cmd(pattern="tiny", outgoing=True))
 async def ultiny(event):
     reply = await event.get_reply_message()
     if not (reply and (reply.media)):
