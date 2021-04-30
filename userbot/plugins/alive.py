@@ -8,7 +8,7 @@ from . import ALIVE_NAME, StartTime, catversion, get_readable_time, mention, rep
 DEFAULTUSER = ALIVE_NAME or "cat"
 CAT_IMG = Config.ALIVE_PIC
 CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "𝗧𝗼𝗸𝗮𝗶 𝗨-𝗕𝗼𝘁"
-EMOJI = Config.CUSTOM_ALIVE_EMOJI or "  ✎ "
+EMOJI = Config.CUSTOM_ALIVE_EMOJI or " I➠ "
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
@@ -33,17 +33,16 @@ async def amireallyalive(alive):
         await alive.edit("`𝗔𝗰𝘁𝗶𝘃𝗮𝘁𝗶𝗻𝗴...84%\n█████████████████████▒▒▒▒`")
         sleep(1)
         await alive.edit("`𝗔𝗰𝘁𝗶𝘃𝗮𝘁𝗶𝗻𝗴...100%\n█████████████████████████`")
-        sleep(1)
         await alive.edit("⚡")
         sleep(3)
         cat_caption = f"**•━━━━━━ ✘ {CUSTOM_ALIVE_TEXT} ✘ ━━━━━━•**\n"
         cat_caption += f"**╭━━✠━━━━━━━ ✞✞ ━━━━━━━✠━━╮**\n"
-        cat_caption += f"**{EMOJI} 𝗗𝗮𝘁𝗮 :** `{check_sgnirts}`\n"
-        cat_caption += f"**{EMOJI} 𝗩-𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻 :** `{version.__version__}\n`"
-        cat_caption += f"**{EMOJI} 𝗩-𝗕𝗼𝘁 :** `{catversion}`\n"
-        cat_caption += f"**{EMOJI} 𝗩-𝗣𝗵𝘆𝘁𝗼𝗻 :** `{python_version()}\n`"
-        cat_caption += f"**{EMOJI} 𝗨𝗽𝘁𝗶𝗺𝗲 :** `{uptime}\n`"
-        cat_caption += f"**{EMOJI} 𝗕𝗼𝘀 :** {mention}\n"
+        cat_caption += f"**{EMOJI}** 𝗗𝗮𝘁𝗮 : `{check_sgnirts}`\n"
+        cat_caption += f"**{EMOJI}** 𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻 : `{version.__version__}\n`"
+        cat_caption += f"**{EMOJI}** 𝗕𝗼𝘁 : `{catversion}`\n"
+        cat_caption += f"**{EMOJI}** 𝗣𝗵𝘆𝘁𝗼𝗻 : `{python_version()}\n`"
+        cat_caption += f"**{EMOJI}** 𝗨𝗽𝘁𝗶𝗺𝗲 : `{uptime}\n`"
+        cat_caption += f"**{EMOJI}** 𝗕𝗼𝘀 : {mention}\n"
         cat_caption += f"**╰━━✠━━━━━━━ ✞✞ ━━━━━━━✠━━╯**\n"
         await alive.client.send_file(
             alive.chat_id, CAT_IMG, caption=cat_caption, reply_to=reply_to_id
@@ -63,19 +62,18 @@ async def amireallyalive(alive):
         await alive.edit("`𝗔𝗰𝘁𝗶𝘃𝗮𝘁𝗶𝗻𝗴...84%\n█████████████████████▒▒▒▒`")
         sleep(1)
         await alive.edit("`𝗔𝗰𝘁𝗶𝘃𝗮𝘁𝗶𝗻𝗴...100%\n█████████████████████████`")
-        sleep(1)
         await alive.edit("⚡")
         sleep(3)
         await edit_or_reply(
             alive,
             f"**•━━━━━ ✘ {CUSTOM_ALIVE_TEXT} ✘ ━━━━━•**\n"
             f"**╭━━✠━━━━━━ ✞✞ ━━━━━━✠━━╮**\n"
-            f"**{EMOJI} 𝗗𝗮𝘁𝗮 :** `{check_sgnirts}`\n"
-            f"**{EMOJI} 𝗩-𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻 :** `{version.__version__}\n`"
-            f"**{EMOJI} 𝗩-𝗕𝗼𝘁 :** `{catversion}`\n"
-            f"**{EMOJI} 𝗩-𝗣𝗵𝘆𝘁𝗼𝗻 :** `{python_version()}\n`"
-            f"**{EMOJI} 𝗨𝗽𝘁𝗶𝗺𝗲 :** `{uptime}\n`"
-            f"**{EMOJI} 𝗕𝗼𝘀 :** {mention}\n"
+            f"**{EMOJI}** 𝗗𝗮𝘁𝗮 : `{check_sgnirts}`\n"
+            f"**{EMOJI}** 𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻 : `{version.__version__}\n`"
+            f"**{EMOJI}** 𝗕𝗼𝘁 : `{catversion}`\n"
+            f"**{EMOJI}** 𝗣𝗵𝘆𝘁𝗼𝗻 : `{python_version()}\n`"
+            f"**{EMOJI}** 𝗨𝗽𝘁𝗶𝗺𝗲 : `{uptime}\n`"
+            f"**{EMOJI}** 𝗕𝗼𝘀 : {mention}\n"
             f"**╰━━✠━━━━━━ ✞✞ ━━━━━━✠━━╯**\n",
         )
 
