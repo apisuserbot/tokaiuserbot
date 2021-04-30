@@ -199,7 +199,7 @@ async def pingme(pong):
     await pong.edit("`𝗣𝗼𝗻𝗴🏓.....`")
     end = datetime.now()
     duration = (end - start).microseconds / 9000
-    await pong.edit("➠ **𝗣𝗶𝗻𝗴!!**\n`%sms`" % (duration))
+    await pong.edit("➠ 𝗣𝗶𝗻𝗴!! \n`%sms`" % (duration))
 
 CMD_HELP.update(
     {"ping": "`.ping` ; `.lping` ; `.xping` ; `.fping`\
