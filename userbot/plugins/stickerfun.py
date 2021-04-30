@@ -28,7 +28,7 @@ async def waifu(animu):
             text = (await animu.get_reply_message()).message
         else:
             await edit_or_reply(
-                animu, "`You haven't written any article, Waifu is going away.`"
+                animu, "`Kamu Belum Menulis Apapun, Aku Tidak Dapat Memproses....`"
             )
             return
     text = deEmojify(text)
@@ -57,7 +57,7 @@ async def sticklet(event):
             reply_message = await event.get_reply_message()
             sticktext = reply_message.message
         else:
-            await edit_or_reply(event, "need something, hmm")
+            await edit_or_reply(event, "Membutuhkan Sesuatu, Hmm...")
             return
     if event.reply_to_msg_id:
         reply_message = await event.get_reply_message()
@@ -89,7 +89,7 @@ async def sticklet(event):
     await event.client.send_file(
         event.chat_id,
         image_stream,
-        caption="cat's Sticklet",
+        caption="Tokai",
         reply_to=event.message.reply_to_msg_id,
     )
     # cleanup
