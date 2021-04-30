@@ -13,7 +13,7 @@ import asyncio
 @bot.on(admin_cmd(outgoing=True, pattern="tempmail$"))
 async def demn(ult):
     chat = "@TempMailBot"
-    msg = await eor(ult, Membuat Temporary Email...")
+    msg = await eor(ult, f"Membuat Temporary Email...")
     async with ultroid_bot.conversation(chat) as conv:
         try:
             response = conv.wait_event(events.NewMessage(
