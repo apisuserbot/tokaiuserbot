@@ -33,7 +33,7 @@ async def amireallyalive(alive):
         await alive.edit("`Activating...84%\n█████████████████████▒▒▒▒`")
         sleep(1)
         await alive.edit("`Activating...100%\n█████████████████████████`")
-        await alive.edit("⚡")
+        await alive.edit("😈")
         sleep(3)
         cat_caption = f"**••━━━━━━ ✘ {CUSTOM_ALIVE_TEXT} ✘ ━━━━━━••**\n"
         cat_caption += f"**╭━━✠━━━━━━━ ◈◈ ━━━━━━━✠━━╮**\n"
@@ -62,7 +62,7 @@ async def amireallyalive(alive):
         await alive.edit("`Activating...84%\n█████████████████████▒▒▒▒`")
         sleep(1)
         await alive.edit("`Activating...100%\n█████████████████████████`")
-        await alive.edit("⚡")
+        await alive.edit("😈")
         sleep(3)
         await edit_or_reply(
             alive,
