@@ -251,8 +251,8 @@ async def wish_check(event):
 async def source(e):
     await edit_or_reply(
         e,
-        "➠ 𝐑𝐞𝐩𝐨 𝐎𝐰𝐧𝐞𝐫 : [𝐓𝐨𝐤𝐚𝐢](https://t.me/Insaynn)\
-        \n➠ 𝐁𝐚𝐬𝐞 𝐎𝐧 : [𝐂𝐚𝐭-𝐔𝐬𝐞𝐫𝐛𝐨𝐭](https://github.com/sandy1709/catuserbot) - [𝐋𝐨𝐫𝐝-𝐔𝐬𝐞𝐫𝐛𝐨𝐭](https://github.com/Zora24/Lord-Userbot)",
+        "➠ Repo Owner : [Tokai](https://t.me/Insaynn)\
+        \n➠ Base On : [Cat-Userbot](https://github.com/sandy1709/catuserbot) - [Lord-Userbot](https://github.com/Zora24/Lord-Userbot)",
     )
 
 
