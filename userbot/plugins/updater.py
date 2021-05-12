@@ -16,7 +16,7 @@ heroku_api = "https://api.heroku.com"
 
 UPSTREAM_REPO_BRANCH = Config.UPSTREAM_REPO_BRANCH
 
-if Config.UPSTREAM_REPO == "goodcat":
+if Config.UPSTREAM_REPO == "tokaibot":
     UPSTREAM_REPO_URL = "https://github.com/Tokai-Robo/tokaiuserbot"
 elif Config.UPSTREAM_REPO == "badcat":
     UPSTREAM_REPO_URL = "https://github.com/Jisan09/catuserbot"
