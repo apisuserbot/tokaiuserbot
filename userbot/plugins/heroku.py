@@ -167,13 +167,13 @@ async def dyno_usage(dyno):
     await asyncio.sleep(1.5)
     return await dyno.edit(
         f"**╔══════━━━━━━━══════╗** \n"
-        f" ➠ **Penggunaan Dyno**  **{Config.HEROKU_APP_NAME}**:\n"
-        f"     ◈  `{AppHours}`**jam**  `{AppMinutes}`**mnt**  "
-        f"**|**  [`{AppPercentage}`**%**]\n"
+        f" ➠ **Penggunaan Dyno {Config.HEROKU_APP_NAME} :**\n"
+        f"     ◈  `{AppHours}` **Jam** - `{AppMinutes}` **Menit**  "
+        f"- `{AppPercentage}`**%**\n"
         f"**◖═══════════════════◗** \n"
-        f" ➠ **Sisa Dyno Bulan Ini**:\n"
-        f"     ◈  `{hours}`**jam**  `{minutes}`**mnt**  "
-        f"**|**  [`{percentage}`**%**]\n"
+        f" ➠ **Sisa Dyno Bulan Ini :**\n"
+        f"     ◈  `{hours}` **Jam** - `{minutes}` **Menit**  "
+        f"- `{percentage}`**%**\n"
         f"**╚══════━━━━━━━══════╝**"
     )
 
