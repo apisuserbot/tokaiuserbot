@@ -11,8 +11,8 @@ from ..utils import errors_handler
 from . import BOTLOG, BOTLOG_CHATID, extract_time, get_user_from_event
 
 # =================== CONSTANT ===================
-NO_ADMIN = "`I am not an admin nub nibba!`"
-NO_PERM = "`I don't have sufficient permissions! This is so sed. Alexa play despacito`"
+NO_ADMIN = "`Aku bukan admin!!`"
+NO_PERM = "`Tidak punya permission lengkap, kasihan...`"
 
 
 @bot.on(admin_cmd(pattern=r"tmute(?: |$)(.*)"))
@@ -26,7 +26,7 @@ async def tmuter(catty):
     if not admin and not creator:
         await edit_or_reply(catty, NO_ADMIN)
         return
-    catevent = await edit_or_reply(catty, "`muting....`")
+    catevent = await edit_or_reply(catty, "`Muting....`")
     user, reason = await get_user_from_event(catty, catevent)
     if not user:
         return
@@ -36,17 +36,17 @@ async def tmuter(catty):
         cattime = reason[0]
         reason = reason[1] if hmm == 2 else None
     else:
-        await catevent.edit("you haven't mentioned time, check `.info tadmin`")
+        await catevent.edit("Waktu belum disertakan, cek `.info tadmin`")
         return
     self_user = await catty.client.get_me()
     ctime = await extract_time(catty, cattime)
     if not ctime:
         await catevent.edit(
-            f"Invalid time type specified. Expected m , h , d or w not as {cattime}"
+            f"Invalid spesifikasi tipe waktu. Expected m , h , d or w not as {cattime}"
         )
         return
     if user.id == self_user.id:
-        await catevent.edit(f"Sorry, I can't mute myself")
+        await catevent.edit(f"Maaf, tidak bisa mute diri sendiri")
         return
     try:
         await catevent.client(
@@ -59,9 +59,9 @@ async def tmuter(catty):
         # Announce that the function is done
         if reason:
             await catevent.edit(
-                f"{_format.mentionuser(user.first_name ,user.id)} was muted in {catty.chat.title}\n"
-                f"**Muted for : **{cattime}\n"
-                f"**Reason : **__{reason}__"
+                f"{_format.mentionuser(user.first_name ,user.id)} telah dimute di {catty.chat.title}\n"
+                f"**Durasi : **{cattime}\n"
+                f"**Alasan : **__{reason}__"
             )
             if BOTLOG:
                 await catty.client.send_message(
@@ -74,7 +74,7 @@ async def tmuter(catty):
                 )
         else:
             await catevent.edit(
-                f"{_format.mentionuser(user.first_name ,user.id)} was muted in {catty.chat.title}\n"
+                f"{_format.mentionuser(user.first_name ,user.id)} telah dimute di {catty.chat.title}\n"
                 f"Muted for {cattime}\n"
             )
             if BOTLOG:
@@ -87,10 +87,10 @@ async def tmuter(catty):
                 )
         # Announce to logging group
     except UserIdInvalidError:
-        return await catevent.edit("`Uh oh my mute logic broke!`")
+        return await catevent.edit("`404 Error Not Found`")
     except UserAdminInvalidError:
         return await catevent.edit(
-            "`Either you're not an admin or you tried to mute an admin that you didn't promote`"
+            "`Tidak dapat membisukan user tersebut..`"
         )
     except Exception as e:
         return await catevent.edit(f"`{str(e)}`")
@@ -107,7 +107,7 @@ async def ban(catty):
     if not admin and not creator:
         await edit_or_reply(catty, NO_ADMIN)
         return
-    catevent = await edit_or_reply(catty, "`banning....`")
+    catevent = await edit_or_reply(catty, "`Banning....`")
     user, reason = await get_user_from_event(catty, catevent)
     if not user:
         return
@@ -117,19 +117,19 @@ async def ban(catty):
         cattime = reason[0]
         reason = reason[1] if hmm == 2 else None
     else:
-        await catevent.edit("you haven't mentioned time, check `.info tadmin`")
+        await catevent.edit("Waktu belum disertakan, cek `.info tadmin`")
         return
     self_user = await catty.client.get_me()
     ctime = await extract_time(catty, cattime)
     if not ctime:
         await catevent.edit(
-            f"Invalid time type specified. Expected m , h , d or w not as {cattime}"
+            f"Invalid spesifikasi tipe waktu. Expected m , h , d or w not as {cattime}"
         )
         return
     if user.id == self_user.id:
-        await catevent.edit(f"Sorry, I can't ban myself")
+        await catevent.edit(f"Maaf, tidak bisa banned diri sendiri!")
         return
-    await catevent.edit("`Whacking the pest!`")
+    await catevent.edit("`Whacking the pest!!!`")
     try:
         await catty.client(
             EditBannedRequest(
@@ -140,7 +140,7 @@ async def ban(catty):
         )
     except UserAdminInvalidError:
         return await catevent.edit(
-            "`Either you're not an admin or you tried to ban an admin that you didn't promote`"
+            "`Perlu gelar admin!! tidak bisa melakukan banned pada user tersebut`"
         )
     except BadRequestError:
         await catevent.edit(NO_PERM)
@@ -152,7 +152,7 @@ async def ban(catty):
             await reply.delete()
     except BadRequestError:
         await catevent.edit(
-            "`I dont have message nuking rights! But still he was banned!`"
+            "`Error!! Tapi dia tetap terbanned!`"
         )
         return
     # Delete message and then tell that the command
@@ -160,9 +160,9 @@ async def ban(catty):
     # Shout out the ID, so that fedadmins can fban later
     if reason:
         await catevent.edit(
-            f"{_format.mentionuser(user.first_name ,user.id)} was banned in {catty.chat.title}\n"
-            f"banned for {cattime}\n"
-            f"Reason:`{reason}`"
+            f"{_format.mentionuser(user.first_name ,user.id)} telah dibanned di {catty.chat.title}\n"
+            f"Durasi : {cattime}\n"
+            f"Alasan :`{reason}`"
         )
         if BOTLOG:
             await catty.client.send_message(
@@ -175,7 +175,7 @@ async def ban(catty):
             )
     else:
         await catevent.edit(
-            f"{_format.mentionuser(user.first_name ,user.id)} was banned in {catty.chat.title}\n"
+            f"{_format.mentionuser(user.first_name ,user.id)} telah dibanned di {catty.chat.title}\n"
             f"banned for {cattime}\n"
         )
         if BOTLOG:
