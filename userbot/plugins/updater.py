@@ -108,7 +108,7 @@ async def update(event, repo, ups_rem, ac_br):
 @bot.on(admin_cmd(outgoing=True, pattern=r"update(| now)$"))
 @bot.on(sudo_cmd(pattern="update(| now)$", allow_sudo=True))
 async def upstream(event):
-    "Untuk .update command, check jika bot telah up to date, update dengsn spesifikasi"
+    "Untuk .update command, check jika bot telah up to date, update dengan spesifikasi"
     conf = event.pattern_match.group(1).strip()
     event = await edit_or_reply(event, "`Mengecek update,mohon tunggu...`")
     off_repo = UPSTREAM_REPO_URL
@@ -169,7 +169,7 @@ async def upstream(event):
     if conf == "" and not force_update:
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
-        return await event.respond("`Ketik **.update now** untuk mengupdate Tokai-Ubot` \n"`Ketik **.update deploy** untuk update dengan metode deploy ulang tokai-Ubot.`")
+        return await event.respond("`Ketik **.update now** untuk mengupdate Tokai-Ubot`" \n"`Ketik **.update deploy** untuk update dengan metode deploy ulang tokai-Ubot.`")
 
     if force_update:
         await event.edit(
