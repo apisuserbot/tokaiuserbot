@@ -15,16 +15,16 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit(f"`Kontol`")
     sleep(3)
-    await typew.edit("`Astagfirullah...`")
+    await typew.edit("`Tau kontol!?`")
     sleep(3)
-    await typew.edit("`Kamu ini berdosa banget!!!`")
+    await typew.edit("`Mukalo kaya kontol!!!`")
 
 
 @register(outgoing=True, pattern='^G(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
-    await typew.edit(f"**Emm, bentar gua pikir dulu...**")
+    await typew.edit(f"`Emm, bentar gua pikir dulu...`")
     sleep(3)
     await typew.edit("`Ga dulu deh...`")
 
@@ -33,7 +33,7 @@ async def typewriter(typew):
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
-    await typew.edit(f"**Halo, kenalin gua {DEFAULTUSER}**")
+    await typew.edit(f"`Halo, kenalin gua {DEFAULTUSER}`")
     sleep(2)
     await typew.edit("`Salam kenal...`")
 
@@ -41,13 +41,13 @@ async def typewriter(typew):
 @register(outgoing=True, pattern='^L(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("`Wa'alaikumsalam...`")
+    await typew.edit("`وَالسَّلاَمُعَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ`")
 
 
 @register(outgoing=True, pattern='^P(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("`Assalamualaikum...`")
+    await typew.edit("`السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ`")
 
 
 CMD_HELP.update({
