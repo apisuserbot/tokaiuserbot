@@ -40,8 +40,7 @@ async def amireallyalive(alive):
         cat_caption += f"**{EMOJI}** **Data :** `{check_sgnirts}`\n"
         cat_caption += f"**{EMOJI}** **Telethon :** `{version.__version__}\n`"
         cat_caption += f"**{EMOJI}** **Bot Ver :** `{catversion}`\n"
-        cat_caption += f"**{EMOJI}** **Phyton :** `{python_version()}\n`"
-        cat_caption += f"**{EMOJI}** **Uptime :** `{uptime}\n`"
+        cat_caption += f"**{EMOJI}** **Python :** `{python_version()}\n`"
         cat_caption += f"**{EMOJI}** **Owner :** {mention}\n"
         cat_caption += f"**╰━━✠━━━━━━━ ◈◈ ━━━━━━━✠━━╯**\n"
         await alive.client.send_file(
@@ -72,7 +71,6 @@ async def amireallyalive(alive):
             f"**{EMOJI}** **Telethon :** `{version.__version__}\n`"
             f"**{EMOJI}** **Bot Ver :** `{catversion}`\n"
             f"**{EMOJI}** **Python :** `{python_version()}\n`"
-            f"**{EMOJI}** **Uptime :** `{uptime}\n`"
             f"**{EMOJI}** **Owner :** {mention}\n"
             f"**╰━━✠━━━━━━ ◈◈ ━━━━━━✠━━╯**\n",
         )
