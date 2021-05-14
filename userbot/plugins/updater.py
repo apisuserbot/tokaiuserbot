@@ -169,7 +169,7 @@ async def upstream(event):
     if conf == "" and not force_update:
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
-        return await event.respond("Ketik `.update now` untuk mengupdate Tokai-Ubot/n Ketik `.update deploy` untuk update + mendeploy ulang tokai-Ubot ")
+        return await event.respond("`Ketik **.update now** untuk mengupdate Tokai-Ubot` \n"`Ketik **.update deploy** untuk update dengan metode deploy ulang tokai-Ubot.`")
 
     if force_update:
         await event.edit(
