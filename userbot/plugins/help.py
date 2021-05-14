@@ -19,13 +19,13 @@ async def cmd_list(event):
     input_str = event.pattern_match.group(1)
     if input_str == "text":
         string = (
-            "Total {count} commands found in {plugincount} plugins of **Tokai-Ubot**\n\n"
+            "Total {count} commands found in {plugincount} plugins of catuserbot\n\n"
         )
         catcount = 0
         plugincount = 0
         for i in sorted(CMD_LIST):
             plugincount += 1
-            string += f"{plugincount}) Commands Ditemukan di " + i + " are \n"
+            string += f"{plugincount}) Commands found in Plugin " + i + " are \n"
             for iter_list in CMD_LIST[i]:
                 string += "    " + str(iter_list)
                 string += "\n"
@@ -42,14 +42,14 @@ async def cmd_list(event):
                 .get("key")
             )
             url = f"https://nekobin.com/{key}"
-            reply_text = f"**Semua Command Tokai-Ubot Bisa Dilihat Disini [here]({url})**"
+            reply_text = f"**All commands of the catuserbot can be seen [here]({url})**"
             await event.edit(reply_text)
             return
         await event.edit(string.format(count=catcount, plugincount=plugincount))
         return
     if input_str:
         if input_str in CMD_LIST:
-            string = "<b>{count} Command Berada Di {input_str}:</b>\n\n"
+            string = "<b>{count} Commands found in plugin {input_str}:</b>\n\n"
             catcount = 0
             for i in CMD_LIST[input_str]:
                 string += f"  •  <code>{i}</code>"
@@ -59,26 +59,26 @@ async def cmd_list(event):
                 string.format(count=catcount, input_str=input_str), parse_mode="HTML"
             )
         else:
-            await event.edit(input_str + " Bukan Plugin Valid!")
+            await event.edit(input_str + " is not a valid plugin!")
             await asyncio.sleep(3)
             await event.delete()
     else:
         if HELPTYPE is True:
-            help_string = f"Tokai U-Bot Helper. Provided by {ALIVE_NAME}. untuk melihat semua plugin\
-                          \nCheck `.help nama plugin` hanya command, info tentang plugin tidak termasuk.\
-                          \nCheck `.info nama plugin` untuk command dan info tentang plugin"
+            help_string = f"Userbot Helper. Provided by {ALIVE_NAME} to reveal all the plugins\
+                          \nCheck `.help plugin name` for commands, in case popup doesn't appear.\
+                          \nCheck `.info plugin name` for usage of thoose plugins and commands"
             tgbotusername = Config.TG_BOT_USERNAME
             results = await event.client.inline_query(tgbotusername, help_string)
             await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
             await event.delete()
         else:
-            string = "<b>Beri Spesifikasi Plugin Yg Kamu Cari !!\
-                \nJumlah Plugin : </b><code>{count}</code>\
-                \n<b>Usage :</b> <code>.help plugin name</code> \n\n"
+            string = "<b>Please specify which plugin do you want help for !!\
+                \nNumber of plugins : </b><code>{count}</code>\
+                \n<b>Usage:</b> <code>.help plugin name</code> \n\n"
             catcount = 0
             for i in sorted(CMD_LIST):
-                string += "☾" + f"<code>{str(i)}</code>"
-                string += "☽ "
+                string += "◆ " + f"<code>{str(i)}</code>"
+                string += " "
                 catcount += 1
             await event.edit(string.format(count=catcount), parse_mode="HTML")
 
@@ -135,8 +135,8 @@ async def info(event):
             await event.delete()
             await reply.delete()
     else:
-        string = "<b>Beri Spesifikasi Plugin Yg Kamu Cari !!\
-            \nJumlah Plugin : </b><code>{count}</code>\
+        string = "<b>Please specify which plugin do you want help for !!\
+            \nNumber of plugins : </b><code>{count}</code>\
             \n<b>Usage:</b> <code>.help plugin name</code>\n\n"
         catcount = 0
         for i in sorted(SUDO_LIST):
@@ -160,13 +160,13 @@ async def info(event):
             await asyncio.sleep(3)
             await event.delete()
     else:
-        string = "<b>Beri Spesifikasi Plugin Yg Kamu Cari !!\
-            \nJumlah Plugin : </b><code>{count}</code>\
+        string = "<b>Please specify which plugin do you want help for !!\
+            \nNumber of plugins : </b><code>{count}</code>\
             \n<b>Usage : </b><code>.info plugin name</code>\n\n"
         catcount = 0
         for i in sorted(CMD_HELP):
-            string += "☾" + f"<code>{str(i)}</code>"
-            string += "☽ "
+            string += "◆ " + f"<code>{str(i)}</code>"
+            string += " "
             catcount += 1
         if event.sender_id in Config.SUDO_USERS:
             await event.reply(string.format(count=catcount), parse_mode="HTML")
@@ -182,7 +182,7 @@ async def _(event):
     result = await event.client(functions.help.GetNearestDcRequest())
     result = (
         _format.yaml_format(result)
-        + "\n\n**Tempat Data Center Telegram:**\
+        + "\n\n**List Of Telegram Data Centres:**\
                 \nDC1 : Miami FL, USA\
                 \nDC2 : Amsterdam, NL\
                 \nDC3 : Miami FL, USA\
@@ -205,16 +205,16 @@ async def _(event):
         HELPTYPE = True
     if HELPTYPE:
         if h_type:
-            await event.edit("`inline mode memang sudah hidup`")
+            await event.edit("`inline mode is already enabled`")
         else:
             addgvar("HELPTYPE", h_type)
-            await event.edit("`inline mode dimatikan`")
+            await event.edit("`inline mode is disabled`")
     else:
         if h_type:
             addgvar("HELPTYPE", h_type)
-            await event.edit("`inline mode dihidupkan`")
+            await event.edit("`inline mode is enabled`")
         else:
-            await event.edit("`inline mode memang sudah mati`")
+            await event.edit("`inline mode is already disabled`")
 
 
 CMD_HELP.update(
