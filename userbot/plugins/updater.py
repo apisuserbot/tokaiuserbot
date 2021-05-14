@@ -162,21 +162,22 @@ async def upstream(event):
     # Special case for deploy
     if changelog == "" and not force_update:
         await event.edit(
-            "\n`Tokai-Userbot is`  **up-to-date**  `with`  "
+            "\n`Tokai-Userbot telah`  **up-to-date**  `dengan`  "
             f"**{UPSTREAM_REPO_BRANCH}**\n"
         )
         return repo.__del__()
     if conf == "" and not force_update:
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
-        return await event.respond("`Ketik **.update now** untuk mengupdate Tokai-Ubot`" \n"`Ketik **.update deploy** untuk update dengan metode deploy ulang tokai-Ubot.`")
+        return await event.respond("`Ketik .update now untuk update Tokai-Ubot` \n"
+                                   "`Ketik .update deploy untuk update dengan metode deploy ulang Tokai-Ubot`")
 
     if force_update:
         await event.edit(
-            "`Force-Syncing to latest stable userbot code, please wait...`"
+            "`Force-Syncing pada system inti, mohon tunggu...`"
         )
     if conf == "now":
-        await event.edit("`Updating userbot, mohon tunggu...`")
+        await event.edit("`Update dalam proses, mohon tunggu...`")
         await update(event, repo, ups_rem, ac_br)
     return
 
