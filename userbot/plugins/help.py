@@ -19,13 +19,13 @@ async def cmd_list(event):
     input_str = event.pattern_match.group(1)
     if input_str == "text":
         string = (
-            "Total {count} commands found in {plugincount} plugins of TokaiUserbot\n\n"
+            "Total {count} commands found in {plugincount} plugins of **Tokai-Ubot**\n\n"
         )
         catcount = 0
         plugincount = 0
         for i in sorted(CMD_LIST):
             plugincount += 1
-            string += f"{plugincount}) Commands Berada Di " + i + " are \n"
+            string += f"{plugincount}) Commands Ditemukan di " + i + " are \n"
             for iter_list in CMD_LIST[i]:
                 string += "    " + str(iter_list)
                 string += "\n"
@@ -42,7 +42,7 @@ async def cmd_list(event):
                 .get("key")
             )
             url = f"https://nekobin.com/{key}"
-            reply_text = f"**Semua Command TokaiUserbot Bisa Dilihat Disini [here]({url})**"
+            reply_text = f"**Semua Command Tokai-Ubot Bisa Dilihat Disini [here]({url})**"
             await event.edit(reply_text)
             return
         await event.edit(string.format(count=catcount, plugincount=plugincount))
@@ -64,7 +64,7 @@ async def cmd_list(event):
             await event.delete()
     else:
         if HELPTYPE is True:
-            help_string = f"Tokai U-Bot Helper. Provided by {ALIVE_NAME} untuk melihat semua plugin\
+            help_string = f"Tokai U-Bot Helper. Provided by {ALIVE_NAME}. untuk melihat semua plugin\
                           \nCheck `.help nama plugin` hanya command, info tentang plugin tidak termasuk.\
                           \nCheck `.info nama plugin` untuk command dan info tentang plugin"
             tgbotusername = Config.TG_BOT_USERNAME
@@ -135,8 +135,8 @@ async def info(event):
             await event.delete()
             await reply.delete()
     else:
-        string = "<b>Please specify which plugin do you want help for !!\
-            \nNumber of plugins : </b><code>{count}</code>\
+        string = "<b>Beri Spesifikasi Plugin Yg Kamu Cari !!\
+            \nJumlah Plugin : </b><code>{count}</code>\
             \n<b>Usage:</b> <code>.help plugin name</code>\n\n"
         catcount = 0
         for i in sorted(SUDO_LIST):
