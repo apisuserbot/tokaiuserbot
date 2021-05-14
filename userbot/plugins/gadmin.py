@@ -48,16 +48,16 @@ UNBAN_RIGHTS = ChatBannedRights(
 async def catgban(event):
     if event.fwd_from:
         return
-    cate = await edit_or_reply(event, "`𝐆𝐛𝐚𝐧𝐧𝐢𝐧𝐠......`")
+    cate = await edit_or_reply(event, "`Gbanning`")
     start = datetime.now()
     user, reason = await get_user_from_event(event, cate)
     if not user:
         return
     if user.id == (await event.client.get_me()).id:
-        await cate.edit("𝐊𝐞𝐧𝐚𝐩𝐚 𝐡𝐚𝐫𝐮𝐬 𝐛𝐚𝐧𝐧𝐞𝐝 𝐝𝐢𝐫𝐢 𝐬𝐞𝐧𝐝𝐢𝐫𝐢!!!")
+        await cate.edit("Tidak bisa banned diri sendiri!!")
         return
     if user.id in CAT_ID:
-        await cate.edit("𝐊𝐞𝐧𝐚𝐩𝐚 𝐡𝐚𝐫𝐮𝐬 𝐛𝐚𝐧𝐧𝐞𝐝 𝐝𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫 𝐬𝐞𝐧𝐝𝐢𝐫𝐢!!!")
+        await cate.edit("Error 404 Not Found")
         return
     try:
         hmm = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -66,7 +66,7 @@ async def catgban(event):
         pass
     if gban_sql.is_gbanned(user.id):
         await cate.edit(
-            f"`𝐒𝐢 `[user](tg://user?id={user.id})` 𝐬𝐮𝐝𝐚𝐡 𝐚𝐝𝐚 𝐝𝐚𝐥𝐚𝐦 𝐥𝐢𝐬𝐭 𝐠𝐛𝐚𝐧𝐧𝐞𝐝 𝐤𝐮, 𝐬𝐢𝐥𝐚𝐡𝐤𝐚𝐧 𝐜𝐞𝐤 𝐥𝐚𝐠𝐢`"
+            f"`[User](tg://user?id={user.id})` ini sudah berada dalam list gban...`"
         )
     else:
         gban_sql.catgban(user.id, reason)
@@ -75,10 +75,10 @@ async def catgban(event):
     count = 0
     sandy = len(san)
     if sandy == 0:
-        await cate.edit("`𝐁𝐨𝐬 𝐛𝐮𝐤𝐚𝐧 𝐚𝐝𝐦𝐢𝐧, 𝐬𝐞𝐭𝐢𝐝𝐚𝐤𝐧𝐲𝐚 𝐝𝐚𝐥𝐚𝐦 𝐬𝐚𝐭𝐮 𝐠𝐫𝐮𝐩` ")
+        await cate.edit("`Anda bukan admin, setidaknya dalam 1 grup` ")
         return
     await cate.edit(
-        f"`𝐒𝐞𝐝𝐚𝐧𝐠 𝐦𝐞𝐥𝐚𝐤𝐮𝐤𝐚𝐧 𝐠𝐛𝐚𝐧 𝐤𝐞𝐩𝐚𝐝𝐚 `[user](tg://user?id={user.id}) `𝐝𝐢 {len(san)} 𝐠𝐫𝐮𝐩`"
+        f"`Sedang melakukan gban kepada `[user](tg://user?id={user.id}) `di {len(san)} grup`"
     )
     for i in range(sandy):
         try:
@@ -94,7 +94,7 @@ async def catgban(event):
     cattaken = (end - start).seconds
     if reason:
         await cate.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) `𝐭𝐞𝐥𝐚𝐡 𝐭𝐞𝐫-𝐠𝐛𝐚𝐧𝐧𝐞𝐝 𝐝𝐢 {count} 𝐠𝐫𝐮𝐩 𝐝𝐚𝐥𝐚𝐦 {cattaken} 𝐝𝐞𝐭𝐢𝐤`!!\n**𝐀𝐥𝐚𝐬𝐚𝐧 :** `{reason}`"
+            f"[{user.first_name}](tg://user?id={user.id}) `telah tergbanned {count} 𝐠𝐫𝐮𝐩 𝐝𝐚𝐥𝐚𝐦 {cattaken} 𝐝𝐞𝐭𝐢𝐤`!!\n**𝐀𝐥𝐚𝐬𝐚𝐧 :** `{reason}`"
         )
     else:
         await cate.edit(
