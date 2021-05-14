@@ -25,14 +25,14 @@ else:
 
 REPO_REMOTE_NAME = "temponame"
 IFFUCI_ACTIVE_BRANCH_NAME = "master"
-NO_HEROKU_APP_CFGD = "no heroku application found, but a key given? 😕 "
+NO_HEROKU_APP_CFGD = "heroku aplikasi tidak terdeteksi, hmm? "
 HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/master"
-RESTARTING_APP = "re-starting heroku application"
+RESTARTING_APP = "re-starting aplikasi heroku"
 IS_SELECTED_DIFFERENT_BRANCH = (
-    "looks like a custom branch {branch_name} "
-    "is being used:\n"
-    "in this case, Updater is unable to identify the branch to be updated."
-    "please check out to an official branch, and re-start the updater."
+    "terlihat seperti custom branch {branch_name} "
+    "sedang digunakan:\n"
+    "dalam hal itu, Updater tidak dapat mengidentifikasi branch mana yang relevant."
+    "tolong cek/gunakan official branch, dan re-start updater."
 )
 
 
@@ -55,10 +55,10 @@ async def gen_chlog(repo, diff):
 
 async def print_changelogs(event, ac_br, changelog):
     changelog_str = (
-        f"**New UPDATE available for [{ac_br}]:\n\nCHANGELOG:**\n`{changelog}`"
+        f"**UPDATE Baru tersedia untuk [{ac_br}]:\n\nCHANGELOG:**\n`{changelog}`"
     )
     if len(changelog_str) > 4096:
-        await event.edit("`Changelog is too big, view the file to see it.`")
+        await event.edit("`Changelog terlalu besar, buka file untuk melihatnya.`")
         with open("output.txt", "w+") as file:
             file.write(changelog_str)
         await event.client.send_file(
@@ -97,7 +97,7 @@ async def update(event, repo, ups_rem, ac_br):
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
     await event.edit(
-        "`Successfully Updated!\n" "Bot is restarting... Wait for a minute!`"
+        "`Successfully Updated!\n" "Bot restarting.. Mohon tunggu!`"
     )
     # Spin a new instance of bot
     args = [sys.executable, "-m", "userbot"]
@@ -108,31 +108,31 @@ async def update(event, repo, ups_rem, ac_br):
 @bot.on(admin_cmd(outgoing=True, pattern=r"update(| now)$"))
 @bot.on(sudo_cmd(pattern="update(| now)$", allow_sudo=True))
 async def upstream(event):
-    "For .update command, check if the bot is up to date, update if specified"
+    "Untuk .update command, check jika bot telah up to date, update dengsn spesifikasi"
     conf = event.pattern_match.group(1).strip()
-    event = await edit_or_reply(event, "`Checking for updates, please wait....`")
+    event = await edit_or_reply(event, "`Mengecek update,mohon tunggu...`")
     off_repo = UPSTREAM_REPO_URL
     force_update = False
     if HEROKU_API_KEY is None or HEROKU_APP_NAME is None:
         return await edit_or_reply(
-            event, "`Set the required vars first to update the bot`"
+            event, "`Set vars yang dibutuhkan dahulu untuk mengupdate bot`"
         )
     try:
-        txt = "`Oops.. Updater cannot continue due to "
-        txt += "some problems occured`\n\n**LOGTRACE:**\n"
+        txt = "`Oops.. Updater tidak dapat dilnjutkan karena "
+        txt += "beberapa masalah terdeteksi`\n\n**LOGTRACE:**\n"
         repo = Repo()
     except NoSuchPathError as error:
-        await event.edit(f"{txt}\n`directory {error} is not found`")
+        await event.edit(f"{txt}\n`directory {error} tidak terdeteksi`")
         return repo.__del__()
     except GitCommandError as error:
-        await event.edit(f"{txt}\n`Early failure! {error}`")
+        await event.edit(f"{txt}\n`Gagal! {error}`")
         return repo.__del__()
     except InvalidGitRepositoryError as error:
         if conf is None:
             return await event.edit(
-                f"`Unfortunately, the directory {error} "
-                "does not seem to be a git repository.\n"
-                "But we can fix that by force updating the userbot using "
+                f"`Sayangnya, directory telah {error} "
+                "sepertinya itu bukan git repository.\n"
+                "Proses update masih bisa dilakukan dengan mengetik "
                 ".update now.`"
             )
         repo = Repo.init()
@@ -146,10 +146,10 @@ async def upstream(event):
     if ac_br != UPSTREAM_REPO_BRANCH:
         await event.edit(
             "**[UPDATER]:**\n"
-            f"`Looks like you are using your own custom branch ({ac_br}). "
-            "in that case, Updater is unable to identify "
-            "which branch is to be merged. "
-            "please checkout to any official branch`"
+            f"`Sepertinya kamu menggunakan custom branch ({ac_br}). "
+            "dalam hal itu, Updater tidak dapat mengidentifikasi "
+            "branch mana yang palin relevant. "
+            "Tolong cek/gunakan official branch`"
         )
         return repo.__del__()
     try:
@@ -169,14 +169,14 @@ async def upstream(event):
     if conf == "" and not force_update:
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
-        return await event.respond("do `.update deploy` to update the catuserbot")
+        return await event.respond("Ketik `.update now` untuk mengupdate Tokai-Ubot/n Ketik `.update deploy` untuk update + mendeploy ulang tokai-Ubot ")
 
     if force_update:
         await event.edit(
             "`Force-Syncing to latest stable userbot code, please wait...`"
         )
     if conf == "now":
-        await event.edit("`Updating userbot, please wait....`")
+        await event.edit("`Updating userbot, mohon tunggu...`")
         await update(event, repo, ups_rem, ac_br)
     return
 
@@ -188,8 +188,8 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         heroku_applications = heroku.apps()
         if HEROKU_APP_NAME is None:
             await event.edit(
-                "`Please set up the` **HEROKU_APP_NAME** `Var`"
-                " to be able to deploy your userbot...`"
+                "`Tolong set up` **HEROKU_APP_NAME** `Var`"
+                " agar dapat mengupdate userbot...`"
             )
             repo.__del__()
             return
@@ -203,7 +203,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             )
             return repo.__del__()
         await event.edit(
-            "`Userbot dyno build in progress, please wait until the process finishes it usually takes 4 to 5 minutes .`"
+            "`Userbot dyno build dalam proses, mohon tunggu hingga proses selesai. Proses biasanya memakan waktu 4-5 menit.`"
         )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -223,11 +223,11 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         build_status = app.builds(order_by="created_at", sort="desc")[0]
         if build_status.status == "failed":
             await event.edit(
-                "`Build failed!\n" "Cancelled or there were some errors...`"
+                "`Build gagal!\n" "Tertunda atau error pada system...`"
             )
             await asyncio.sleep(5)
             return await event.delete()
-        await event.edit("`Successfully deployed!\n" "Restarting, please wait...`")
+        await event.edit("`Successfully deployed!\n" "Restarting, mohon tunggu...`")
     else:
         await event.edit("`Please set up`  **HEROKU_API_KEY**  ` Var...`")
     return
@@ -236,7 +236,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
 @bot.on(admin_cmd(outgoing=True, pattern=r"update deploy$"))
 @bot.on(sudo_cmd(pattern="update deploy$", allow_sudo=True))
 async def upstream(event):
-    event = await edit_or_reply(event, "`Pulling the catpack repo wait a sec ....`")
+    event = await edit_or_reply(event, "`Pulling Tokai-Ubot repo, mohon tunggu....`")
     off_repo = "https://github.com/Mr-confused/catpack"
     os.chdir("/app")
     catcmd = f"rm -rf .git"
@@ -268,7 +268,7 @@ async def upstream(event):
     ac_br = repo.active_branch.name
     ups_rem = repo.remote("upstream")
     ups_rem.fetch(ac_br)
-    await event.edit("`Deploying userbot, please wait....`")
+    await event.edit("`Deploying userbot, mohon tunggu....`")
     await deploy(event, repo, ups_rem, ac_br, txt)
 
 
