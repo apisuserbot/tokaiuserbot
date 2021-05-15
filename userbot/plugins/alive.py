@@ -35,14 +35,14 @@ async def amireallyalive(alive):
         await alive.edit("`Activating...100%\n█████████████████████████`")
         await alive.edit("😈")
         sleep(3)
-        cat_caption = f"**••━━━━━━ ✘ {CUSTOM_ALIVE_TEXT} ✘ ━━━━━━••**\n"
-        cat_caption += f"**╭━━✠━━━━━━━ ◈◈ ━━━━━━━✠━━╮**\n"
+        cat_caption = f"**◈━━━━━━ ✘ {CUSTOM_ALIVE_TEXT} ✘ ━━━━━━◈**\n"
+        cat_caption += f"**╭━━◈━━━━━━━ ◈◈ ━━━━━━━◈━━╮**\n"
         cat_caption += f"**{EMOJI}** **Data :** `{check_sgnirts}`\n"
         cat_caption += f"**{EMOJI}** **Telethon :** `{version.__version__}\n`"
         cat_caption += f"**{EMOJI}** **Bot Ver :** `{catversion}`\n"
         cat_caption += f"**{EMOJI}** **Python :** `{python_version()}\n`"
         cat_caption += f"**{EMOJI}** **Owner :** {mention}\n"
-        cat_caption += f"**╰━━✠━━━━━━━ ◈◈ ━━━━━━━✠━━╯**\n"
+        cat_caption += f"**╰━━◈━━━━━━━ ◈◈ ━━━━━━━◈━━╯**\n"
         await alive.client.send_file(
             alive.chat_id, CAT_IMG, caption=cat_caption, reply_to=reply_to_id
         )
@@ -65,14 +65,14 @@ async def amireallyalive(alive):
         sleep(3)
         await edit_or_reply(
             alive,
-            f"**••━━━━━ ✘ {CUSTOM_ALIVE_TEXT} ✘ ━━━━━••**\n"
-            f"**╭━━✠━━━━━━ ◈◈ ━━━━━━✠━━╮**\n"
+            f"**◈━━━━━ ✘ {CUSTOM_ALIVE_TEXT} ✘ ━━━━━◈**\n"
+            f"**╭━━◈━━━━━━ ◈◈ ━━━━━━◈━━╮**\n"
             f"**{EMOJI}** **Data :** `{check_sgnirts}`\n"
             f"**{EMOJI}** **Telethon :** `{version.__version__}\n`"
             f"**{EMOJI}** **Bot Ver :** `{catversion}`\n"
             f"**{EMOJI}** **Python :** `{python_version()}\n`"
             f"**{EMOJI}** **Owner :** {mention}\n"
-            f"**╰━━✠━━━━━━ ◈◈ ━━━━━━✠━━╯**\n",
+            f"**╰━━◈━━━━━━ ◈◈ ━━━━━━◈━━╯**\n",
         )
 
 
