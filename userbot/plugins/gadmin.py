@@ -48,7 +48,7 @@ UNBAN_RIGHTS = ChatBannedRights(
 async def catgban(event):
     if event.fwd_from:
         return
-    cate = await edit_or_reply(event, "`Gbanning`")
+    cate = await edit_or_reply(event, "`Sedang proses...`")
     start = datetime.now()
     user, reason = await get_user_from_event(event, cate)
     if not user:
@@ -78,7 +78,7 @@ async def catgban(event):
         await cate.edit("`Anda bukan admin, setidaknya dalam 1 grup` ")
         return
     await cate.edit(
-        f"`Sedang melakukan gban kepada `[user](tg://user?id={user.id}) `di {len(san)} grup`"
+        f"`Sedang melakukan gban kepada `[user](tg://user?id={user.id}) `dalam {len(san)} grup`"
     )
     for i in range(sandy):
         try:
@@ -94,11 +94,11 @@ async def catgban(event):
     cattaken = (end - start).seconds
     if reason:
         await cate.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) `telah tergbanned {count} 𝐠𝐫𝐮𝐩 𝐝𝐚𝐥𝐚𝐦 {cattaken} 𝐝𝐞𝐭𝐢𝐤`!!\n**𝐀𝐥𝐚𝐬𝐚𝐧 :** `{reason}`"
+            f"`Gban sukses dilakukan kepada` [{user.first_name}](tg://user?id={user.id}) `pada {count} grup dalam {cattaken} detik`!!\n**Alasan :** `{reason}`"
         )
     else:
         await cate.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) `𝐭𝐞𝐥𝐚𝐡 𝐭𝐞𝐫-𝐠𝐛𝐚𝐧𝐧𝐞𝐝 𝐝𝐢 {count} 𝐠𝐫𝐮𝐩 𝐝𝐚𝐥𝐚𝐦 {cattaken} 𝐝𝐞𝐭𝐢𝐤`!!"
+            f"`Gban sukses dilakukan kepada` [{user.first_name}](tg://user?id={user.id}) `pada {count} grup dalam {cattaken} detik`!!"
         )
 
     if BOTLOG and count != 0:
@@ -137,7 +137,7 @@ async def catgban(event):
 async def catgban(event):
     if event.fwd_from:
         return
-    cate = await edit_or_reply(event, "`𝐔𝐧𝐠𝐛𝐚𝐧𝐧𝐢𝐧𝐠.....`")
+    cate = await edit_or_reply(event, "`Sedang proses...`")
     start = datetime.now()
     user, reason = await get_user_from_event(event, cate)
     if not user:
@@ -146,7 +146,7 @@ async def catgban(event):
         gban_sql.catungban(user.id)
     else:
         await cate.edit(
-            f"𝐒𝐢 [user](tg://user?id={user.id}) `𝐭𝐢𝐝𝐚𝐤 𝐚𝐝𝐚 𝐝𝐚𝐥𝐚𝐦 𝐥𝐢𝐬𝐭 𝐠𝐛𝐚𝐧𝐧𝐞𝐝 𝐬𝐚𝐲𝐚`"
+            f"[user](tg://user?id={user.id}) `tidak ada didalam list gban`"
         )
         return
     san = []
@@ -154,10 +154,10 @@ async def catgban(event):
     count = 0
     sandy = len(san)
     if sandy == 0:
-        await cate.edit("`𝐁𝐨𝐬 𝐛𝐮𝐤𝐚𝐧 𝐚𝐝𝐦𝐢𝐧, 𝐬𝐞𝐭𝐢𝐝𝐚𝐤𝐧𝐲𝐚 𝐝𝐚𝐥𝐚𝐦 𝐬𝐚𝐭𝐮 𝐠𝐫𝐮𝐩 `")
+        await cate.edit("`Anda bukan admin, setidaknya dalam satu grup `")
         return
     await cate.edit(
-        f"𝐒𝐞𝐝𝐚𝐧𝐠 𝐦𝐞𝐥𝐚𝐤𝐮𝐤𝐚𝐧 𝐮𝐧𝐠𝐛𝐚𝐧 𝐤𝐞𝐩𝐚𝐝𝐚 [user](tg://user?id={user.id}) 𝐝𝐢 `{len(san)}` 𝐠𝐫𝐮𝐩"
+        f"`Sedang melakukan ungban kepada` [user](tg://user?id={user.id}) `dalam {len(san)} grup`"
     )
     for i in range(sandy):
         try:
@@ -173,11 +173,11 @@ async def catgban(event):
     cattaken = (end - start).seconds
     if reason:
         await cate.edit(
-            f"[{user.first_name}](tg://user?id={user.id}`) 𝐭𝐞𝐥𝐚𝐡 𝐭𝐞𝐫-𝐮𝐧𝐠𝐛𝐚𝐧𝐧𝐞𝐝 𝐝𝐢 {count} 𝐠𝐫𝐮𝐩 𝐝𝐚𝐥𝐚𝐦 {cattaken} 𝐝𝐞𝐭𝐢𝐤`!!\n**𝐀𝐥𝐚𝐬𝐚𝐧 :** `{reason}`"
+            f"`Ungban sukses dilakukan kepada` [{user.first_name}](tg://user?id={user.id}) `pada {count} grup dalam {cattaken} detik`!!\n**Alasan :** `{reason}`"
         )
     else:
         await cate.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) `𝐭𝐞𝐥𝐚𝐡 𝐭𝐞𝐫-𝐮𝐧𝐠𝐛𝐚𝐧𝐧𝐞𝐝 𝐝𝐢 {count} 𝐠𝐫𝐮𝐩 𝐝𝐚𝐥𝐚𝐦 {cattaken} 𝐝𝐞𝐭𝐢𝐤`!!"
+            f"`Ungban sukses dilakukan kepada` [{user.first_name}](tg://user?id={user.id}) `pada {count} grup dalam {cattaken} detik`!!"
         )
 
     if BOTLOG and count != 0:
@@ -210,17 +210,17 @@ async def gablist(event):
     if event.fwd_from:
         return
     gbanned_users = gban_sql.get_all_gbanned()
-    GBANNED_LIST = "𝐋𝐢𝐬𝐭 𝐠𝐛𝐚𝐧𝐧𝐞𝐝 𝐮𝐬𝐞𝐫\n"
+    GBANNED_LIST = "List Gban User\n"
     if len(gbanned_users) > 0:
         for a_user in gbanned_users:
             if a_user.reason:
                 GBANNED_LIST += f"➠ [{a_user.chat_id}](tg://user?id={a_user.chat_id}) for {a_user.reason}\n"
             else:
                 GBANNED_LIST += (
-                    f"➠ [{a_user.chat_id}](tg://user?id={a_user.chat_id}) 𝐓𝐚𝐧𝐩𝐚 𝐚𝐥𝐚𝐬𝐚𝐧\n"
+                    f"➠ [{a_user.chat_id}](tg://user?id={a_user.chat_id}) Tanpa alasan\n"
                 )
     else:
-        GBANNED_LIST = "no Gbanned Users (yet)"
+        GBANNED_LIST = "`Tidak ada user didalam list Gban`"
     await edit_or_reply(event, GBANNED_LIST)
 
 
@@ -230,7 +230,7 @@ async def startgmute(event):
     if event.fwd_from:
         return
     if event.is_private:
-        await event.edit("`𝐊𝐞𝐬𝐚𝐥𝐚𝐡𝐚𝐧 𝐬𝐢𝐬𝐭𝐞𝐦 𝐭𝐢𝐝𝐚𝐤 𝐝𝐢𝐤𝐞𝐭𝐚𝐡𝐮𝐢!`")
+        await event.edit("`Kesalahan system tidak diketahui!`")
         await asyncio.sleep(2)
         userid = event.chat_id
         reason = event.pattern_match.group(1)
@@ -239,16 +239,16 @@ async def startgmute(event):
         if not user:
             return
         if user.id == bot.uid:
-            return await edit_or_reply(event, "`𝐓𝐢𝐝𝐚𝐤 𝐛𝐢𝐬𝐚 𝐦𝐞𝐥𝐚𝐤𝐮𝐤𝐚𝐧 𝐠𝐦𝐮𝐭𝐞 𝐩𝐚𝐝𝐚 𝐝𝐢𝐫𝐢 𝐬𝐞𝐧𝐝𝐢𝐫𝐢`")
+            return await edit_or_reply(event, "`Tidak dapat melakukan Gmute pada diri sendiri`")
         userid = user.id
     try:
         user = (await event.client(GetFullUserRequest(userid))).user
     except Exception:
-        return await edit_or_reply(event, "`𝐌𝐚𝐚𝐟, 𝐚𝐤𝐮 𝐭𝐢𝐝𝐚𝐤 𝐛𝐢𝐬𝐚 𝐦𝐞𝐧𝐲𝐞𝐧𝐭𝐮𝐡 𝐮𝐬𝐞𝐫 𝐭𝐞𝐫𝐬𝐞𝐛𝐮𝐭`")
+        return await edit_or_reply(event, "`Maaf, aku tidak bisa menyentuh user tersebut`")
     if is_muted(userid, "gmute"):
         return await edit_or_reply(
             event,
-            f"{_format.mentionuser(user.first_name ,user.id)} ` 𝐓𝐞𝐥𝐚𝐡 𝐭𝐞𝐫-𝐠𝐦𝐮𝐭𝐞`",
+            f"{_format.mentionuser(user.first_name ,user.id)} `sukses ter-Gmute`",
         )
     try:
         mute(userid, "gmute")
@@ -258,12 +258,12 @@ async def startgmute(event):
         if reason:
             await edit_or_reply(
                 event,
-                f"{_format.mentionuser(user.first_name ,user.id)} `𝐒𝐮𝐤𝐬𝐞𝐬 𝐭𝐞𝐫-𝐠𝐦𝐮𝐭𝐞`\n**𝐀𝐥𝐚𝐬𝐚𝐧 :** `{reason}`",
+                f"{_format.mentionuser(user.first_name ,user.id)} `Sukses ter-Gmute`\n**Alasan :** `{reason}`",
             )
         else:
             await edit_or_reply(
                 event,
-                f"{_format.mentionuser(user.first_name ,user.id)} `𝐒𝐮𝐤𝐬𝐞𝐬 𝐭𝐞𝐫-𝐠𝐦𝐮𝐭𝐞`",
+                f"{_format.mentionuser(user.first_name ,user.id)} `Sukses ter-Gmute`",
             )
     if BOTLOG:
         reply = await event.get_reply_message()
@@ -290,7 +290,7 @@ async def endgmute(event):
     if event.fwd_from:
         return
     if event.is_private:
-        await event.edit("`𝐊𝐞𝐬𝐚𝐥𝐚𝐡𝐚𝐧 𝐬𝐢𝐬𝐭𝐞𝐦 𝐭𝐢𝐝𝐚𝐤 𝐝𝐢𝐤𝐞𝐭𝐚𝐡𝐮𝐢!`")
+        await event.edit("`Kesalahan system tidak diketahui!`")
         await asyncio.sleep(2)
         userid = event.chat_id
         reason = event.pattern_match.group(1)
@@ -299,16 +299,16 @@ async def endgmute(event):
         if not user:
             return
         if user.id == bot.uid:
-            return await edit_or_reply(event, "`𝐓𝐢𝐝𝐚𝐤 𝐛𝐢𝐬𝐚 𝐦𝐞𝐥𝐚𝐤𝐮𝐤𝐚𝐧 𝐠𝐦𝐮𝐭𝐞 𝐩𝐚𝐝𝐚 𝐝𝐢𝐫𝐢 𝐬𝐞𝐧𝐝𝐢𝐫𝐢`")
+            return await edit_or_reply(event, "`404 Error Not Found`")
         userid = user.id
     try:
         user = (await event.client(GetFullUserRequest(userid))).user
     except Exception:
-        return await edit_or_reply(event, "`𝐌𝐚𝐚𝐟, 𝐚𝐤𝐮 𝐭𝐢𝐝𝐚𝐤 𝐛𝐢𝐬𝐚 𝐦𝐞𝐧𝐲𝐞𝐧𝐭𝐮𝐡 𝐮𝐬𝐞𝐫 𝐭𝐞𝐫𝐬𝐞𝐛𝐮𝐭`")
+        return await edit_or_reply(event, "`Maaf aku tidak dapat menyentuh user tersebut`")
 
     if not is_muted(userid, "gmute"):
         return await edit_or_reply(
-            event, f"{_format.mentionuser(user.first_name ,user.id)} `𝐓𝐢𝐝𝐚𝐤 𝐭𝐞𝐫-𝐠𝐦𝐮𝐭𝐞`"
+            event, f"{_format.mentionuser(user.first_name ,user.id)} `tidak ter-Gmute`"
         )
     try:
         unmute(userid, "gmute")
@@ -318,12 +318,12 @@ async def endgmute(event):
         if reason:
             await edit_or_reply(
                 event,
-                f"{_format.mentionuser(user.first_name ,user.id)} `𝐒𝐮𝐤𝐬𝐞𝐬 𝐭𝐞𝐫-𝐮𝐧𝐠𝐦𝐮𝐭𝐞𝐝`\n**𝐀𝐥𝐚𝐬𝐚𝐧 :** `{reason}`",
+                f"{_format.mentionuser(user.first_name ,user.id)} `sukses ter-Gmute`\n**Alasan :** `{reason}`",
             )
         else:
             await edit_or_reply(
                 event,
-                f"{_format.mentionuser(user.first_name ,user.id)} `𝐒𝐮𝐤𝐬𝐞𝐬 𝐭𝐞𝐫-𝐮𝐧𝐠𝐦𝐮𝐭𝐞𝐝`",
+                f"{_format.mentionuser(user.first_name ,user.id)} `sukses ter-Gmute`",
             )
     if BOTLOG:
         if reason:
@@ -352,16 +352,16 @@ async def watcher(event):
 async def catgkick(event):
     if event.fwd_from:
         return
-    cate = await edit_or_reply(event, "`gkicking.......`")
+    cate = await edit_or_reply(event, "`Sedang proses...`")
     start = datetime.now()
     user, reason = await get_user_from_event(event, cate)
     if not user:
         return
     if user.id == (await event.client.get_me()).id:
-        await cate.edit("why would I kick myself")
+        await cate.edit("`Tidak bisa melakukan kick pada diri sendiri..`")
         return
     if user.id in CAT_ID:
-        await cate.edit("why would I kick my dev")
+        await cate.edit("`Tidak bisa melakukan kick pada developerku..`")
         return
     try:
         hmm = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -373,10 +373,10 @@ async def catgkick(event):
     count = 0
     sandy = len(san)
     if sandy == 0:
-        await cate.edit("`you are not admin of atleast one group` ")
+        await cate.edit("`Kamu bukan admin, setidaknya dalam satu grup` ")
         return
     await cate.edit(
-        f"`initiating gkick of the `[user](tg://user?id={user.id}) `in {len(san)} groups`"
+        f"`Sedang memproses Gkick kepada `[user](tg://user?id={user.id}) `pada {len(san)} grup`"
     )
     for i in range(sandy):
         try:
@@ -392,11 +392,11 @@ async def catgkick(event):
     cattaken = (end - start).seconds
     if reason:
         await cate.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) `was gkicked in {count} groups in {cattaken} seconds`!!\n**Reason :** `{reason}`"
+            f"`Sukses melakukan Gkick kepada` [{user.first_name}](tg://user?id={user.id}) `pada {count} grup dalam {cattaken} detik`!!\n**Alasan :** `{reason}`"
         )
     else:
         await cate.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) `was gkicked in {count} groups in {cattaken} seconds`!!"
+            f"`Sukses melakukak Gkick kepada` [{user.first_name}](tg://user?id={user.id}) `pada {count} grup dalam {cattaken} detik`!!"
         )
 
     if BOTLOG and count != 0:
