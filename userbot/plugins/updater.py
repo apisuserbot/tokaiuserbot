@@ -169,8 +169,8 @@ async def upstream(event):
     if conf == "" and not force_update:
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
-        return await event.respond("`Ketik .update now untuk update Tokai-Ubot` \n"
-                                   "`Ketik .update deploy untuk update dengan metode deploy ulang Tokai-Ubot`")
+        return await event.respond("`Ketik .update now untuk update Tokai-Ubot\n"
+                                   "Ketik .update deploy untuk update dengan metode deploy ulang Tokai-Ubot`")
 
     if force_update:
         await event.edit(
@@ -228,9 +228,9 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             )
             await asyncio.sleep(5)
             return await event.delete()
-        await event.edit("`Successfully deployed!\n" "Restarting, mohon tunggu...`")
+        await event.edit("`Deploy telah sukses!\n" "Restarting, mohon tunggu...`")
     else:
-        await event.edit("`Please set up`  **HEROKU_API_KEY**  ` Var...`")
+        await event.edit("`Tolong set up`  **HEROKU_API_KEY**  ` Var...`")
     return
 
 
